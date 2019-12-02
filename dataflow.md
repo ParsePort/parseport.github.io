@@ -1,6 +1,9 @@
 ---
 title: Data flow
 permalink: /security/dataflow/
+parent: Security
+nav_order: 1
+has_toc: false
 ---
 
 ## How do we handle your data
