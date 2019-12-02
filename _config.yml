@@ -1,6 +1,6 @@
 remote_theme: pmarsceill/just-the-docs #jekyll-theme-minimal
 #theme: just-the-docs
-title: ParsePort Linux Services
+title: ParsePort XBRL Service
 locale: en_US
 logo: images/logo.png
 
