@@ -6,18 +6,15 @@ nav_order: 1
 has_toc: false
 ---
 
+For our partners, we offer API integration, where we can recieve the input data in either Excel or JSON. For Excel, we help you with tagging of your own Excel, and then it is just a matter of uploading. For JSON integration we have the following structure for the input data:
+
+__TODO__: *We need more on the overall structure for the input json!!*
 
 ```csharp
 namespace ParsePort.XBRL.Conversion.Json
 {
     public class ItemValue
     {
-        /// <summary>
-        /// Indicates which period the value belongs to.
-        /// It must be a valid periodId.
-        /// </summary>
-        public string PeriodId { get; set; }
-
         /// <summary>
         /// The presentational value of the value.
         /// (1,234) kr.
@@ -52,14 +49,6 @@ namespace ParsePort.XBRL.Conversion.Json
         /// Copy from Period
         /// </summary>
         public int? Scale { get; set; }
-        /// <summary>
-        /// Copy from Period
-        /// </summary>
-        public int? Decimals { get; set; }
-        /// <summary>
-        /// Copy from Period
-        /// </summary>
-        public string Precision { get; set; }
 
         /// <summary>
         /// Language of the value.
@@ -74,7 +63,9 @@ namespace ParsePort.XBRL.Conversion.Json
 }
 
 ```
-Example
+
+__TODO__: *We need more here - full example where we remove parts of the input json!!*
+Column and Row is used for ordering of the elements - we use the same termology as for our Excel import. All settings in the JSON can be customized per element, e.g. scale, which is set as 6 per element, but could be set as an overall settting, and changed where appropiate. Scale is used for monitary values, so you can indicate values in millions without writing out zeros.
 ```json
 {
   id: "YOUR-OWN-UNIQUE-KEY-FOR-THIS-TABLE",
