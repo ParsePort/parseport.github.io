@@ -1,0 +1,18 @@
+remote_theme: pmarsceill/just-the-docs #jekyll-theme-minimal
+#theme: just-the-docs
+title: ParsePort Linux Services
+locale: en_US
+logo: images/logo.png
+
+owner:
+  name: ParsePort Aps
+  email: support@parseport.com
+  linkedin: parseport-aps
+
+markdown: kramdown
+
+show_downloads: false
+
+# Footer content appears at the bottom of every page's main content
+footer_content: "Copyright &copy; 2019 ParsePort."
+site-footer: "Copyright &copy; 2019 ParsePort."

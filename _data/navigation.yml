@@ -1,0 +1,25 @@
+# Site navigation links
+- title: Home
+  url: /
+
+- title: Services
+  url: /services/
+  links:
+      - title: Demo link A
+        url: /two/a/
+      - title: Demo link B
+        url: /two/b/
+
+- title: Data flow
+  url: /dataflow/
+
+- title: Architecture
+  url: /architecture/
+
+- title: Security
+  url: /security/
+  links:
+      - title: Demo link A
+        url: /two/a/
+      - title: Demo link B
+        url: /two/b/
