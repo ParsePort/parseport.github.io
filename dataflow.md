@@ -2,21 +2,23 @@
 title: Data flow
 permalink: /security/dataflow/
 parent: Security
-nav_order: 2
+nav_order: 3
 has_toc: false
 ---
 
 ## Data handling whitin the ParsePort solution
+A typical data flow for the ParsePort XBRL service has the following four steps:
 
-
-1. Upload your data to ParsePort (TLS 1.2)
+1. Upload your data to ParsePort ([TLS 1.2](../tls))
+   - Use your credentials or token ([SAML 2.0](../identity))
    - Data is placed in memory
 2. ParsePort extract and convert data from your upload
    - The conversion starts, time to live for a conversion is maximum 2 hours
-3. You can download the report from ParsePort (TLS 1.2)
+3. You can download the report from ParsePort ([TLS 1.2](../tls))
   - You have `15 minutes` to download the report after the conversion is completed
 4. ParsePort cleans up and delete all data from memory
 
+The four steps can be visualized like the following:
 
 ![DataFlow](../../images/dataflow.png "Typical flow for data send to ParsePort")
 
