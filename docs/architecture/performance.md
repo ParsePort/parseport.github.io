@@ -1,22 +1,11 @@
 ---
-title: Architecture
-permalink: /architecture/
-has_children: true
+title: Performance
+permalink: /architecture/performance
+parent: Architecture
 nav_order: 2
 has_toc: false
 ---
-
-## SOA
-__TODO add text here__
-__TODO update figure, to have ParsePort colors and without note and without 3rd party integration__
-
-![Overall architecture for ParsePort solution](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/ParsePort/ArchitecturalDocumentation/master/architectural-overview/XBRL-high-level-simple.txt?token=ANLMBLYZ2UDLC3BQH6I2CE2555CNW "Overall architecture for ParsePort solution")
-
-### Service bus
-To be able to have a central mechanishm for scaling our solution, the solution is build around a service bus. The solution can then be scaled for each of our subprocesses, if there is a huge load on a specific part of the solution. The implemented service bus build upon [MassTransit](https://masstransit-project.com/).
-
-## Performance
-
+# Performance
 For the last X months, the measured performance of the API can be found here:
 
 | Service      | Avg. time to complete    | Maximum time to live |

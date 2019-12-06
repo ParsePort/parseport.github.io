@@ -16,10 +16,7 @@
 
 - title: Security
   url: /security/
-  links:
-      - title: Data flow
-        url: /security/dataflow/
-
+  
   #    - title: Demo link A
   #      url: /two/a/
   #    - title: Demo link B

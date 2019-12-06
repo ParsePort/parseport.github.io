@@ -5,7 +5,7 @@ parent: Services
 nav_order: 1
 has_toc: false
 ---
-
+# ParsePort JSON format
 For our partners, we offer API integration, where we can recieve the input data in either Excel or JSON. For Excel, we help you with tagging of your own Excel, and then it is just a matter of uploading. For JSON integration we have the following structure for the input data:
 
 __TODO__: *We need more on the overall structure for the input json!!*

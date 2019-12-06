@@ -12,7 +12,12 @@ owner:
 markdown: kramdown
 
 show_downloads: false
-
+permalink: pretty
 # Footer content appears at the bottom of every page's main content
 footer_content: "Copyright &copy; 2019 ParsePort."
 site-footer: "Copyright &copy; 2019 ParsePort."
+
+# Aux links for the upper right navigation
+aux_links:
+  "ParsePort.com":
+    - "//parseport.com/"

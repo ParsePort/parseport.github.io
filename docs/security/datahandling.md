@@ -1,12 +1,11 @@
 ---
-title: Data flow
-permalink: /security/dataflow/
+title: Data handling
+permalink: /security/datahandling/
 parent: Security
 nav_order: 3
 has_toc: false
 ---
-
-## Data handling whitin the ParsePort solution
+# Data handling
 A typical data flow for the ParsePort XBRL service has the following four steps:
 
 1. Upload your data to ParsePort ([TLS 1.2](../tls))
