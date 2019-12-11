@@ -22,5 +22,11 @@ aux_links:
   "ParsePort.com":
     - "//parseport.com/"
 
+plugins:
+  - github-pages
+  - pmarsceill/just-the-docs
+  - harrisj/swagger-jekyll
+
+
 swagger:
   json: 'https://xbrlapi.parseport.com/docs/v1/api.json'
