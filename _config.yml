@@ -21,3 +21,6 @@ site-footer: "Copyright &copy; 2019 ParsePort."
 aux_links:
   "ParsePort.com":
     - "//parseport.com/"
+
+swagger:
+  json: 'https://xbrlapi.parseport.com/docs/v1/api.json'

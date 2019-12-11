@@ -1,22 +1,13 @@
 ---
-title: Performance
-permalink: /architecture/performance
+title: Standard level agreements
+permalink: /architecture/sla
 parent: Architecture
 nav_order: 2
 has_toc: false
 ---
-# Performance
-For the last X months, the measured performance of the API can be found here:
 
-| Service      | Avg. time to complete    | Maximum time to live |
-|:-------------|:-------------------------|:---------------------|
-| Conversation | 120 ms                   | 3600 s               |
-| ServiceX     | 120 ms                   | 3600 s               |
-| ServiceY     | 120 ms                   | 3600 s               |
-| ServiceZ     | 120 ms                   | 3600 s               |
-
-### Standard SLA
-The Supplier’s standard service targets for availability of infrastructure:
+# Standard SLA
+The Supplier’s standard service targets for availability of infrastructure (all timestamps are GMT+1):
 
 | SLA (service target)                                      |                          |
 |:----------------------------------------------------------|:-------------------------|
@@ -28,7 +19,7 @@ The Supplier’s standard service targets for availability of infrastructure:
 
 The above shall be calculated according to availability of server infrastructure.
 
-#### Service targets for availability of server instances (standard service targets)
+## Service targets for availability of server instances (standard service targets)
 ParsePort's standard responsibility for availability (operational responsibility) shall include matters up to and including the application described in the Agreement. Thus, the guaranteed availability on server instances shall be calculated at application level.
 
 *Availability at application level shall be measured as follows:*
@@ -43,7 +34,7 @@ _Available Operating Time (Measurement Period -Planned Downtime -Downtime)/Agree
 
 The calculation does not include effects from data communication lines measured from ParsePort’s edge router to the Customer, the Customer’s network or units owned by the Customer.
 
-##### Total Availability (uptime percentage).
+### Total Availability (uptime percentage).
 The total Availability (uptime percentage) shall determine compliance with,
 ”Guaranteed availability at application level in the operations business hours”. This shall be calculated as below:
 
@@ -54,7 +45,7 @@ The following conditions shall not be viewed as downtime:
 
 * Downtime solely caused by the Customer’s circumstances, including errors in the Customer’s software or data transmission lines.
 
-* Downtime due to errors solely caused by a third party supplier not having published an error in Software used by ParsePort.  ParsePort shall document to the Customer that the error had not been published.
+* Downtime due to errors solely caused by a third-party supplier not having published an error in Software used by ParsePort.  ParsePort shall document to the Customer that the error had not been published.
 
 * Downtime because of errors where the Customer has chosen to postpone the error correction.
 
@@ -65,14 +56,14 @@ The following conditions shall not be viewed as downtime:
 
 Additional operational responsibility – other than the above – shall be agreed separately. Service targets for infrastructure, in addition to standard operational responsibility, will be specified in the next section.
 
-##### Service targets, in addition to standard service targets
+### Service targets, in addition to standard service targets
 No other service targets for infrastructure except the above standard service targets have been agreed cf. previous section.
 
-#### SERVICE targets for Operations support and Service Desk
+## Service targets for Operations support and Service Desk
 The Supplier’s Service Desk and operations support services shall be supplied with the service targets which appear from the following section.
 
-##### Incidents – prioritisation and response times
-Incidents requiring support shall be divided into priority levels by PP. When reporting an incident, the Customer may request a priority level but PP shall make the final assessment and determine the priority. Prioritisation shall be determined based on impact (how many users or the type of users) and urgency.
+### Incidents – prioritisation and response times
+Incidents requiring support shall be divided into priority levels by ParsePort. When reporting an incident, the Customer may request a priority level, but ParsePort shall make the final assessment and determine the priority. Prioritisation shall be determined based on impact (how many users or the type of users) and urgency.
 
 | Priority     | Description              | Response time        |
 |:-------------|:-------------------------|:---------------------|
