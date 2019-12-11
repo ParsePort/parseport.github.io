@@ -27,10 +27,6 @@ plugins:
   - pmarsceill/just-the-docs
   - harrisj/swagger-jekyll
 
-jekyll_get:
-  - id: swagger
-    json: 'https://xbrlapi.parseport.com/docs/v1/api.json'
-    cache: true
 
 swagger:
   json: 'https://xbrlapi.parseport.com/docs/v1/api.json'
