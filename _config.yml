@@ -4,7 +4,7 @@ title: ParsePort XBRL Service
 locale: en_US
 logo: images/logo.png
 url: https://parseport.github.io/
-baseurl: '/'
+baseurl: ''
 repository: "ParsePort/parseport.github.io"
 
 owner:
