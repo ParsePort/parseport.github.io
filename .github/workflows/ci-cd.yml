@@ -22,6 +22,6 @@ jobs:
         git config --local user.name "emilholmegaard-parseport"
         git commit -m "Add changes" -a
     - name: Push changes
-      uses: ad-m/github-push-action@sources
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.githubtoken }}
