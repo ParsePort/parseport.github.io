@@ -14,7 +14,7 @@ jobs:
       run: |
         sudo apt-get install ruby-full
         sudo gem install bundler
-        sudo bundle install --jobs 4 --retry 3
+        sudo bundle update
         bundle exec rake
     - name: Commit build
       run: |
@@ -28,3 +28,4 @@ jobs:
         github_token: ${{ secrets.githubtoken }}
         branch: master
         force: true
+        directory: /home/runner/work/parseport.github.io/parseport.github.io
