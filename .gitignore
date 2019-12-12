@@ -29,7 +29,7 @@ Gemfile.lock
 .sass-cache
 .jekyll-metadata
 _site
-.github/
+
 
 # Thumbnails
 ._*
