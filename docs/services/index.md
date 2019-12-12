@@ -6,7 +6,7 @@ nav_order: 1
 has_toc: false
 ---
 # Services
-Overall the [ParsePort API](https://xbrlapi.parseport.com) has four services to offer, and then one service for providing inputs to the other four services. The four services can be used  independently or in steps starting with: **[Extract]** - the service for disassamble your financhial data, this can be from JSON, Excel, CSV or even Word. Then **[Conversion]** which adds meta data to your finansial data and translate your values into XBRL. **[Validation]** validates the XBRL against the given taxonomy, to make sure that the correct rules are followed. The last step if to **[Render]** the validated XBRL, and transform it to either XHTML or JSON, which then can be used to report your data to your local authorities. **[Taxonomies]** provides a set of taxonomies support by ParsePort. Furthermore, **[Taxonomies]** provides generel setttings you can use in your input to ParsePort API.
+Overall the [ParsePort API](https://xbrlapi.parseport.com) has four services to offer, and then one service for providing inputs to the other four services. The four services can be used independently or in steps starting with: **[Extract]** - the service for disassamble your financhial data, this can be from JSON, Excel, CSV or even Word. Then **[Conversion]** which adds meta data to your finansial data and translate your values into XBRL. **[Validation]** validates the XBRL against the given taxonomy, to make sure that the correct rules are followed. The last step is to **[Render]** the validated XBRL, and transform it to either XHTML or JSON, which then can be used to report your data to your local authorities. **[Taxonomies]** provides a set of taxonomies support by ParsePort. Furthermore, **[Taxonomies]** provides generel setttings you can use in your input to ParsePort API.
 
 In the following you can read about the used structure for the ParsePort API. If you would like to use the API, you can find the documentation for the input format, please visit [JSON input for API](inputjson.md).
 
@@ -34,24 +34,23 @@ This endpoint let you download the result of the process done by the service, it
 Here you can find the entry points for [https://xbrlapi.parseport.com](https://xbrlapi.parseport.com), and a short summary. Please visit [https://xbrlapi.parseport.com](https://xbrlapi.parseport.com) for more information.
 
 <div>
-<ul>
-{% for param in site.data.swagger.paths %}
-<li>
-{% if param contains 'get' %}
-    <h3>GET {{ param.path }}</h3>
-{% endif %}
-{% if param contains 'put' %}
-    <h3>PUT {{ param.path }}</h3>
-{% endif %}
-{% if param contains 'post' %}
-    <h3>POST {{ param.path }}</h3>
-{% endif %}
-{% if param contains 'delete' %}
-    <h3>DELETE {{ param.path }}</h3>
-{% endif %}
-    <p>{{ param.verbs.first.summary }}</p>
+  <ul>
+  {% for param in site.data.swagger.paths %}
+    <li>
+    {% if param contains 'get' %}
+      <h3>GET {{ param.path }}</h3>
+    {% endif %}
+    {% if param contains 'put' %}
+      <h3>PUT {{ param.path }}</h3>
+    {% endif %}
+    {% if param contains 'post' %}
+      <h3>POST {{ param.path }}</h3>
+    {% endif %}
+    {% if param contains 'delete' %}
+      <h3>DELETE {{ param.path }}</h3>
+    {% endif %}
+      <p>{{ param.verbs.first.summary }}</p>
     </li>
-{% endfor %}
-
-</ul>
+  {% endfor %}
+  </ul>
 </div>

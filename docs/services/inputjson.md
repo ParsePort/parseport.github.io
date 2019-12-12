@@ -8,6 +8,8 @@ has_toc: false
 # ParsePort JSON format
 The ParsePort API accepts multiple formats, and the most common format is Excel. If you use Excel, ParsePort will help you to setup your Excel with ParsePort simplified tagging. if you are a partner, you can use the API, where the format can be either Excel with simplified tagging or you can use our JSON format. For JSON integration we have the following structure for the input data (explanations after the JSON example):
 
+**TODO** Add examples for GAAP, EBA, EIOPA and ESEF eg with accordion
+
 ```json
 {
   "version": 1.0,

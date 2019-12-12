@@ -25,9 +25,11 @@ test-results/
 Icon
 
 #Documentaion
-_site/
-*.look
 Gemfile.lock
+.sass-cache
+.jekyll-metadata
+_site
+.github/
 
 # Thumbnails
 ._*

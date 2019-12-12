@@ -4,11 +4,6 @@
 
 - title: Services
   url: /services/
-  #links:
-  #    - title: Demo link A
-  #      url: /two/a/
-  #    - title: Demo link B
-  #      url: /two/b/
 
 
 - title: Architecture
@@ -16,8 +11,3 @@
 
 - title: Security
   url: /security/
-  
-  #    - title: Demo link A
-  #      url: /two/a/
-  #    - title: Demo link B
-  #      url: /two/b/

@@ -34,3 +34,15 @@ jekyll_get:
 
 swagger:
   json: 'https://xbrlapi.parseport.com/docs/v1/api.json'
+
+
+# Exclude these files from the build process results.
+# Prevents them from showing up in the master branch which
+# is the live site.
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - readme.md
+  - Rakefile
