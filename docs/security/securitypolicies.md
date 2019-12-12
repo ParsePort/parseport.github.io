@@ -1,6 +1,6 @@
 ---
 title: Security policies
-permalink: /security/policies/
+permalink: security/policies/
 parent: Security
 nav_order: 1
 has_toc: false

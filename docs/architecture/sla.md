@@ -1,6 +1,6 @@
 ---
 title: Standard level agreements
-permalink: /architecture/sla
+permalink: architecture/sla
 parent: Architecture
 nav_order: 2
 has_toc: false

@@ -1,6 +1,6 @@
 ---
 title: JSON format for ParsePort API
-permalink: /services/api/json
+permalink: services/api/json
 parent: Services
 nav_order: 1
 has_toc: false

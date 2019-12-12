@@ -1,6 +1,6 @@
 ---
 title: Data handling
-permalink: /security/datahandling/
+permalink: security/datahandling/
 parent: Security
 nav_order: 3
 has_toc: false
