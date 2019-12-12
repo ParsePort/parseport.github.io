@@ -12,8 +12,11 @@ has_toc: true
 * [Technical security](technicalsecurity.md) - Options for integration and which technologies that are applied
 * [Data handling](datahandling.md) - Flow for how data is handled and time to live for data at ParsePort
 
-## Measures (what do we do)
-**TODO** Start the ISO ISMS part here - then when we have a correct system, we can merge
+## Measures
+ParsePort is on the process of getting the ISO 27001 certificate. Therefore all measures are or will be aligned with the ISO27001 ISMS.
+Access to data center and hosting environemnts follows the least privilleged principles. Access is limited to only a very limited set of developers, and the access is reassessed on a yearly basis.
+
+Access to the ParsePort environment is monitored with **TODO**, and counter measures are evaluated on a monthly basis. 
 
 ## Policies
 ParsePort security polices can be found here: [Security policies](securitypolicies.md). Please contact us, if you as a partner have any security related questions, which are not answered in the policies or in [Technical security](technicalsecurity.md).
