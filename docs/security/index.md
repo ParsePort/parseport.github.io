@@ -41,3 +41,5 @@ Services that cannot be solely run with Windows in a HyperV environment, are hos
 * Integration test of all environemnts
 
 All hosting from Azure are located in North Europe (Ireland). All integration towards Azure uses TLS 1.2, and the same policies are applied in Azure as for the IaaS from GlobalConnect.
+
+Deployments are fully automated, which minimizes error prone manual tasks.
