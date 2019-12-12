@@ -6,11 +6,11 @@ nav_order: 3
 has_toc: true
 ---
 # Security
-**TODO** Introduction - short intro and then point to each of the sub pages
+This section collects the security information public avaliable for the ParsePort solution and ParsePort organisation. The security documentation is split into multiple parts:
 
-* [Security policies](securitypolicies.md) - ParsePort security policies (public part)
-* [Technical security](technicalsecurity.md) - Options for integration and which technologies that are applied
-* [Data handling](datahandling.md) - Flow for how data is handled and time to live for data at ParsePort
+* [Security policies](securitypolicies.md) - ParsePort security policies (public part).
+* [Technical security](technicalsecurity.md) - Techincal security for e.g. integration towards ParsePort.
+* [Data handling](datahandling.md) - Flow for how data is handled and time to live for data at ParsePort.
 
 ## Measures
 ParsePort is on the process of getting the ISO 27001 certificate. Therefore all measures are or will be aligned with the ISO27001 ISMS.
