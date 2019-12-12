@@ -3,6 +3,7 @@ remote_theme: pmarsceill/just-the-docs #jekyll-theme-minimal
 title: ParsePort XBRL Service
 locale: en_US
 logo: images/logo.png
+baseurl: https://parseport.github.io/
 
 owner:
   name: ParsePort Aps
