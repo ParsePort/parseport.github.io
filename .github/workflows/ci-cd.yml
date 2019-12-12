@@ -20,8 +20,10 @@ jobs:
       run: |
         git config --local user.email "emil.holmegaard@parseport.com"
         git config --local user.name "emilholmegaard-parseport"
+        git add .
         git commit -m "Add changes" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.githubtoken }}
+        branch: master
