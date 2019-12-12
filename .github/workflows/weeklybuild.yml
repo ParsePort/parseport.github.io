@@ -1,7 +1,7 @@
 on:
-  push:
-    branches:
-      - sources
+  schedule:
+    #midnight sunday
+    - cron:  '0 0 * * 0'
 jobs:
   build:
     runs-on: ubuntu-latest
