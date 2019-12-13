@@ -1,213 +1,214 @@
 ---
-title: Security policies
-permalink: security/policies/
+title: Security policy
+permalink: security/policy/
 parent: Security
 nav_order: 1
 has_toc: false
 ---
 **TODO** Translate
-# Security policies
+# Security policy
 
 ## Introduction
-Dette dokument er en erklæring, henvendt til ParsePorts IT-afdeling, leverandører og partnere, om de forpligtelser de påtager sig ved omgangen med ParsePorts data og IT-systemer. Dokumentet er ligeledes en information overfor personer med tilknytning til ParsePort, om de tiltag der gøres for at sikre IT-systemerne
+This document is a statement, addressed to ParsePort's IT department, suppliers and partners, about the obligations they make when dealing with ParsePort's data and IT systems. The document is also an information to people associated with ParsePort about the measures taken to secure the IT systems.
 
 ### Audience
-Denne politik er er gældende for enhver person der ved ansættelse i ParsePort, eller som ekstern samarbejdspartner har fået tildelt adgang til systemerne i ParsePort. Disse personer er samtidig ansvarlige for at eventuelle tredjeparter der tillades adgang til udstyret, overholder denne politik i forbindelse med brug af udstyret.
+This policy applies to any person who has been granted access to the systems in ParsePort, when employed by ParsePort or as an external partner. At the same time, these persons are responsible for any third parties being permitted access to the equipment to comply with this policy when using the equipment.
 
 ### Common techincal security measures
-ParsePorts netværk skal til enhver tid være baseret på standardprotokoller. Valg af protokol foretages af den IT-ansvarlige. Ved skift af protokol skal ekstern rådgiver give deres anbefaling samt hjælpe med at belyse faldgrupper, fejlkilder, mv.
+ParsePort's network must always be based on standard protocols. Protocol selection is made by the IT manager. When changing the protocol, the external adviser must give their recommendation as well as help elucidate fall groups, sources of error, etc.
 
-Infrastrukturen skal til enhver tid være tidssvarende, og sikres af den IT-ansvarlige. Arbejdet sker under ledelse af direktionen, og eventuelt via medvirken fra en ekstern kompetencerådgiver.
+The infrastructure must be up-to-date at all times and secured by the IT manager. The work is done under the direction of the Executive Board, and possibly through the assistance of an external competence advisor.
 
-Infrastrukturen skal gennemgås 1 gang årligt, i sammenhæng med planlægning af den årlige IT-strategiplan.
+The infrastructure must be reviewed once a year, in the context of planning the annual IT strategy plan.
 
 ### Suppliers, service og repair
-Servere samt PC’ere skal såfremt der ikke er væsentlige grunde for andet, installeres med standard basissoftware, der kan serviceres af generelle IT-leverandører.
+Servers and PCs should be installed with standard basic software that can be serviced by general IT vendors, unless there are significant reasons for otherwise.
 
-For at sikre lettest mulig tilgang til reklamationssager og afhjælpning af fejl, bør antallet af leverandører begrænses i det omfang det er muligt.
+In order to ensure the easiest possible approach to complaints cases and remedying errors, the number of suppliers should be limited as far as possible.
 
-Når udstyr med indbygget lagringsmedier såsom PC’ere, servere og mobile enheder overleveres til tredjepart, skal denne overholde ParsePorts IT-sikkerhedsregler. Såfremt enheden indeholder virksomhedsdata og lagringsmediet ikke er krypteret, skal dette foretages, eller lagringsmediet skal fjernes.
+When equipment with built-in storage media such as PCs, servers and mobile devices is handed over to a third party, it must comply with ParsePort's IT security rules. If the device contains company data and the storage medium is not encrypted, this must be done or the storage media removed.
 
 #### Security requirements for suppliers
-ParsePort stiller vise sikkerhedsmæssige krav til IT-leverandører der skal være opfyldt.
+ParsePort sets security requirements for IT vendors that must be met.
 
-Det er nødvendigt at eventuelle IT-leverandører efterlever denne IT-sikkerhedspolitik. Samtidig forventes det at der er etableret brugerrettighedsstyring og kontrol, fysisk sikkerhed samt regelmæssige backup-rutiner af henholdsvis hardware og software. Desuden skal systemerne være beskyttet af teknologier og foranstaltninger, der begrænser risiko for angreb mod systemer, der driftes på vegne af ParsePort. Under teknologier tænkes specielt på eksempelvis firewall og antivirus, mens foranstaltninger kan være aktiv logning og politikker håndhævet på systemerne.
+Any IT vendor must comply with this IT security policy. At the same time, user rights management and control, physical security and regular backup routines of hardware and software are expected to be established. In addition, the systems must be protected by technologies and measures that limit the risk of attacks against systems operated on behalf of ParsePort. Technologies include, for example, firewall and antivirus, while measures can be active logging and policies enforced on the systems.
 
-ParsePort forudsætter desuden, at leverandøren foretager proaktiv overvågning af det udstyr, der er outsourcet, og øvrige systemer der kan have indvirkning på drift og stabilitet af løsninger, der varetages af leverandøren på vegne af ParsePort. Omfanget af krav til leverandøren kan variere afhængig af hvilken form for service, der outsources. Da der kan være tale om forskelligartede SLA og vilkår, henvises til de individuelle kontrakter, der er indgået med leverandøren.
+In addition, ParsePort assumes that the supplier proactively monitors the outsourced equipment and other systems that may affect the operation and stability of solutions provided by the supplier on behalf of ParsePort. The scope of requirements for the supplier may vary depending on the type of service being outsourced. As there may be different SLAs and terms, refer to the individual contracts signed with the supplier.
 
 ### IT-equipment
-Alt IT-udstyr skal være godkendt af den IT-ansvarlige, og må kun benyttes så længe produktet fortsat har aktiv livscyklus i form af software og hardware opdateringer.
+IT equipment must be approved by the IT manager and may only be used as long as the product continues to have an active life cycle in the form of software and hardware updates.
 
 ### Backups
-Der skal tages backup løbende af alle interne infrastrukturkomponenter, samt for de kundevendte systemer.
-Backuppen skal minimum årligt testes for mulig restore af enkeltfiler, samt af individuelle servere.
+All internal infrastructure components and customer-facing systems must be backed up on an ongoing basis.
+The backup must be tested at least annually for possible restore of individual files, as well as of individual servers.
 
 ### Vira and hacking
-Alle ParsePorts servere er sikret med antivirus software, der automatisk henter nye virusdefinitioner løbende. Der scannes for alle de vira, som er kendt af programmet på alle relevante filer.
+All ParsePort servers are secured with antivirus software that automatically downloads new definitions on an ongoing basis. All viruses known by the program are scanned for all relevant files.
 
-Antivirusprogrammets log overvåges løbende af den IT-ansvarlige. Som udgangspunkt er det umuligt at komme med fyldestgørende retningslinjer for virus og virusangreb, men ParsePort gør løbende brug af eksternt IT-sikkerhedsfirma med teknisk erfaring i incident og forensic håndtering, så skade og nedetid minimeres, og hændelsen isoleres så hurtigt som overhovedet muligt. Har man som slutbruger mistanke om, at PC’en har fået virus, skal alle opgaver på systemet indstilles. PC’en isoleres fra netværket, og den IT-ansvarlige kontaktes.
+The log of the antivirus program is continuously monitored by the IT manager. Initially, it is impossible to provide adequate guidelines for viruses and virus attacks, but ParsePort continuously uses external IT security company with technical experience in incident and forensic handling to minimize damage and downtime and isolate the incident as quickly as possible. If, as an end user, it is suspected that the PC has received a virus, all tasks on the system must be canceled. The PC is isolated from the network and the IT manager is contacted.
 
-Samtlige PC'er samt servere skal have gyldigt antivirusprogram installeret. ParsePorts interne net er beskyttet af firewall, og er isoleret fra andre netværk, kun med adgang fra den interne zone hos Global Connect, hvor basis insfrastrukturen drives fra. Alle zoner hos Global Connect er beskyttet af både firewall samt intrusion prevention system.
+All PCs and servers must have a valid antivirus program installed. ParsePort's internal network is protected by firewall and is isolated from other networks, only with access from the Global Connect internal zone from which the base infrastructure is operated. All zones at Global Connect are protected by both firewall and intrusion prevention system.
 
-Alt infrastruktur der er placeret hos Global Connect er udover beskyttelse med firewall, også beskyttet med Intrusion Prevention System for yderligere beskyttelse.
+Apart from firewall protection, all infrastructure located at Global Connect is also protected with the Intrusion Prevention System for additional protection.
 
-For at sikre uvildig test af systemerne, foretages der mindst én gang om året ekstern penetrationstest af alle zoner hvor ParsePort har udstyr hos Global Connect.
+To ensure impartial testing of the systems, external penetration tests are performed at least once a year for all zones where ParsePort has equipment at Global Connect.
 
-Software til at søge at omgå system og applikationskontroller må udelukkende benyttes af professionelle sikkerhedskonsulenter, og udelukkende med henblik på sikring af systemerne. Disse må endvidere ikke benyttes uden skriftlig accept fra direktionen samt den IT-ansvarlige.
+Software to bypass system and application controls may only be used by professional security consultants and solely for the purpose of securing the systems. Furthermore, these must not be used without the written consent of the Executive Board and the IT manager.
 
 ### Data persistence
-Der er to lokationer for data lagring, alt efter hvorvidt data lagringen er for ParsePorts interne infrastruktur eller for ParsePorts kundevendte programmel (produkt).
+There are two locations for data storage, depending on whether the data storage is for ParsePort's internal infrastructure or for ParsePort's customer-facing software (product).
 
-Både ParsePorts interne og kundevendte IT-systemer er placeret hos Global Connect i professionelt ISAE 3402 godkendt samt ISO 27001 og ISO 9001 certificeret datacenter på en IaaS platform. Hvorfor data både er fysisk og virtuelt sikret mod uautoriseret adgang.
+Both ParsePort's internal and customer-facing IT systems are located at Global Connect in a professional ISAE 3402 approved as well as ISO 27001 and ISO 9001 certified data center on an IaaS platform. At Global Connect data is both physically and virtually secured against unauthorized access.
 
 #### Internally infrastructure
-For at sikre en centralisering af data, samt have en mindre angrebsoverflade arbejder alle medarbejdere på en Microsoft Remote Desktop løsning som udover mail platformen er det eneste sted der lagres interne data.
+To ensure centralization of data, as well as having a smaller attack surface, all employees work on a Microsoft Remote Desktop solution which, besides the mail platform, is the only place that stores internal data.
+**TODO** Office365 solution with MFA and audit trail
 
-#### Public infrastructure
-Den kundevendte infrastruktur benyttes udelukkende til bearbejdning og konvertering af data. En bruger får adgang med brugernavn og kodeord, og uploader en fil, der bliver bearbejdet af systemet. Når bearbejdningen er færdig kan brugeren hente de bearbejdede data. Derefter slettes både de uploadede og bearbejdede data.
+#### Customer-facing infrastructure
+The customer-facing infrastructure is used exclusively for data processing and conversion. A user is granted access with username and password, then the user uploads a file, that is being processed by the system. When the processing is complete, the user can retrieve the processed data. Afterwards both the uploaded and processed data are deleted.
 
 ### Updates of systemes
-Alle IT-systemer skal holdes jævnligt opdaterede.
+All IT systems must be regularly updated.
 
-  *	Der skal som minimum én gang månedligt foretages kritiske software opdatering (Operativ system, mv)
-  *	Der skal som minimum halvårligt foretages kritiske opdateringer af hardware komponenter (firmware, mv)
-  *	Der skal som minimum årligt foretages en intern sårbarhedsskanning for afklaring af interne risici.
+   * At least once a month, critical software updates (Operating system, etc.)
+   * Critical updates of hardware components (firmware, etc.) must be made at least every six months.
+   * An internal vulnerability scan must be conducted at least annually to clarify internal risks.
 
-Den IT-ansvarlige er ansvarlig for at holde sig opdateret på sårbarheder, og deres potentielle risiko, såfremt de er relevante for ParsePorts infrastruktur.
+The IT manager is responsible for keeping abreast of vulnerabilities and their potential risks, if they are relevant to ParsePort's infrastructure.
 
 ### Licenses
-Alt software benyttet i ParsePort skal have gyldig licens tilknyttet.
+All software used in ParsePort must have a valid license attached.
 
-Alle software køb/registreringer skal enten foretages af, eller registreres hos en IT-ansvarlige som så står for dokumentation og asset management.
+All software purchases / registrations must either be made by or registered with the IT manager who then stands for documentation and asset management.
 
 ## Physical security
-Fundamentet for sikring af IT-udstyr er en god fysisk IT-sikkerhed.
+The foundation for securing IT equipment is good physical IT security.
 
 ### Physical security - data center
-Hos ParsePort er alle servere outsourcet til Global Connect.
+At ParsePort, all servers are outsourced to Global Connect.
 
-For at opnå forsvarlig fysisk sikkerhed er der hos Global Connect følgende fysiske foranstaltninger:
+In order to achieve proper physical security, Global Connect has the following physical measures:
 
-*	Aircondition for at sikre mod overophedning og uhensigtsmæssig luftfugtighed
-*	Døgnbemandet adgangskontrol med flere låsetyper
-*	Alarm
-*	Brandsikrede materialer
-*	Automatisk brand bekæmpelses anlæg
-*	Servere der er løftet fra gulv for sikring mod flydende væsker
-*	Strømredundans i form af UPS anlæg og dieselgenerator
-*	Videoovervågning
-*	Perimetersikring i form af afspærrede områder
+* Air conditioning to protect against overheating and inappropriate humidity
+* 24/7 access control with multiple lock types
+* Alarm
+* Fire resistant materials
+* Automatic fire fighting system
+* Servers that are lifted from the floor for protection against liquid liquids
+* Power redundancy in the form of UPS plant and diesel generator
+*	Video surveillance
+* Perimeter protection in the form of confined areas
 
 ### Physical security - HQ
-På ParsePorts hovedkontor, placeret på Roholmsvej 12 A, 2, 2620 Albertslund har følgende fysiske foranstaltninger:
+At ParsePort's head office, located at Roholmsvej 12 A, 2, 2620 Albertslund has the following physical measures:
 
-*	Nøglelås til opgang. (deles med andre lejere)
-*	Nøglelås til dør, beskyttet med nøgle
-*	Alarm koblet til alarmcentral med personlig kode til hver medarbejder
-*	Videoovervågning tilkoblet til alarmcentral
-*	Røgkanon
+* Key lock for entry. (shared with other tenants)
+* Key lock for door, key protected
+* Alarm connected to alarm center with personal code for each employee
+* Video surveillance connected to alarm center
+* Smoke cannon
 
 ### Cables
-Kabler der benyttes på ParsePorts adresse til IT-udstyr i form af eksempelvis netledning, netværkskabel, HDMI kabler mv. skal være mærket så de kan identificeres. Ligeledes skal der ved brug af krydsfelter på adressen være mulighed for ved opmærkning at identificere endepunkterne.
+Cables used at ParsePort's address for IT equipment in the form of, for example, power cord, network cable, HDMI cables, etc. must be labeled so that they can be identified. Similarly, when using cross-fields at the address, it should be possible to identify the endpoints by marking.
 
 ### Wireless network
-Trådløse netværk omhandler WiFi kommunikation som sker med henblik på at opnå adgang til et netværk af ressourcer fra en eller flere enheder.
+Wireless networks are about WiFi communication that is done to gain access to a network of resources from one or more devices.
 
-Alt opsætning/modifikation/nedtagning af trådløse netværk skal ske således, at de er sikret mod indtrængen for uvedkommende.
+All setup / modification / dismantling of wireless networks must be such that they are protected against intrusions by unauthorized persons.
 
-Trådløse netværk skal som minimum overholde følgende krav:
+Wireless networks must at least comply with the following requirements:
 
-* Kryptering minimum jævnfør WPA2 standarden
-* Kodeord skal benyttes til opsætningen, og omgående ændres fra det oprindelige
-* SSID skal ændres fra fabriksindstilling
+* Encryption minimum according to WPA2 standard
+* Password must be used for setup and immediately changed from original
+* SSID needs to be changed from factory default
 
 ### Data backup
-Backuppen tages af GlobalConnect, og skal overholde følgende krav:
-* Der skal tages backup dagligt
-* Backuppen skal være “application aware” – kunne tage backup af data lagret i applikationer, hvor fuld disk backup ikke kan generere gyldig backup. Såfremt dette ikke er muligt skal applikationen lave et data dump lokalt dagligt, således at den normale fil backup tager af denne.
-* Backup data skal til hver en tid være fysisk sikret på samme måde som de data der er taget backup af
-* Backup data skal fysisk placeres i andet datacenter end backup kilden og minimum 1 kilometer fra hinanden
+The backup is taken by Global Connect and must comply with the following requirements:
+* Backup daily
+* The backup must be “application aware” - be able to backup data stored in applications where full disk backup cannot generate valid backup. If this is not possible, the application must make a data dump locally daily, so that the normal file backup takes care of this.
+* Backup data must at all times be physically secured in the same way as the backup data
+* Backup data must be physically located in a data center other than the backup source and at least 1 kilometer apart
 
-### Bortskaffelse af data/medier
-Den IT-ansvarlige står for bortskaffelse af alt internt IT-udstyr, og herunder sikringen mod datatab.
+### Data / media disposal
+The IT manager is responsible for the disposal of all internal IT equipment, including the protection against data loss.
 
-Alle lagringsmedier skal tages ud af IT-udstyr og sendes til professionel destruktion hos en udbyder der tilbyder professionel datadestruktion.
+All storage media must be taken out of IT equipment and sent for professional destruction by a provider offering professional data destruction.
 
-I tilfælde af at lagringsmediet ikke kan udtages fra IT-udstyret skal hele IT-udstyret indsendes til destruktion.
+In case the storage media cannot be removed from the IT equipment, the entire IT equipment must be submitted for destruction.
 
-Såfremt IT-udstyr skal genbruges uden for ParsePort skal dette saniteres for data på en metode der som minimum overholder NIST Special Publication 800-88 Revision 1 – Purge.
+If IT equipment is to be reused outside ParsePort, this must be sanitized for data using a method that at least complies with NIST Special Publication 800-88 Revision 1 - Purge.
 
-### Mærkning og udlevering af udstyr
-IT-ansvarlig står for registrering, mærkning og udlevering af IT-udstyr. Samt for registrering i ParsePorts IT asset management dokumentation.
+### Labeling and delivery of equipment
+The IT manager is responsible for the registration, labeling and delivery of IT equipment. As well as for registration in ParsePort's IT asset management documentation.
 
-### Misc
-Alle medarbejdere skal altid være opmærksomme på IT-sikkerheden på en sådan måde at data beskyttes og håndteres bedst muligt.
+### Miscellaneous
+All employees must always be aware of IT security in such a way that data is best protected and handled.
 
-Medarbejdere i ParsePort skal endvidere være opmærksomme på uhensigtsmæssigheder eller deciderede overtrædelser af IT-sikkerhedspolitikken. Bliver man opmærksom på sådant, skal dette enten påtales direkte til den enkelte kollega, meddeles til nærmeste foresatte eller til IT-ansvarlig, alt efter sagens karakter.
+Employees in ParsePort must also be aware of any inconsistencies or actual breaches of the IT security policy. If you become aware of this, this must either be addressed directly to the individual colleague, communicated to the immediate superior or to the IT manager, depending on the nature of the case.
 
 ## E-mail og doument handling
-E-mail er i dag et af de mest benyttede kommunkationsværktøjer både internt og eksternt. Håndteringen af elektronisk post og dokumenter, fremover benævnt e-mail, er derfor et centralt element i det daglige arbejde i ParsePort.
+Email is today one of the most widely used communication tools, both internally and externally. The handling of electronic mail and documents, henceforth referred to as e-mail, is therefore a central element in the daily work of ParsePort.
 
-Alle medarbejdere, vil tillige skulle håndtere e-mail, og skal dermed også være i stand til at iagttage og efterleve de sikkerhedsmæssige krav i tilknytning hertil.
+All employees will also have to deal with e-mail, and must therefore also be able to observe and comply with the security requirements associated with it.
 
-Med indførelsen af elektronisk dokumenthåndtering og digital signatur er retsvirkningerne af elektroniske dokumenter i mange tilfælde efterhånden bevet sidestillet med almindelige håndunderskrevne papirdokumenter. Det er derfor nødvendigt med et sæt fælles retningslinjer for, hvorledes e-mail skal modtages og besvares.
+With the introduction of electronic document management and digital signature, the legal effects of electronic documents have in many cases gradually been compared with ordinary hand-signed paper documents. Therefore, a set of common guidelines is needed for how e-mail should be received and answered.
 
 ### Definition of an e-mail
-Med e-mails menes i denne sammenhæng: Ethvert fremsendt/afsendt dokument eller besked i elektronisk form fra eller til et et af ParsePorts domæner.
+In this context, e-mail means: Any transmitted / sent document or message in electronic form from or to one of ParsePort's domains.
 
-Der skelnes dog mellem interne og eksterne e-mails, hvor interne e-mails kun sendes over lukkede kredsløb, hvor alt kommunikation med mailserveren er krypteret, men eksterne e-mails kan transporteres uden kryptering.
+However, there is a distinction between internal and external e-mails, where internal e-mails are sent only over closed circuits where all communication with the mail server is encrypted, but external e-mails can be transported without encryption.
 
-Det følger i sagens natur, at sikkerhedsniveauerne i håndteringen heraf vil variere afhængig af dokumentets karakter og følsomhed. Der er eksempelvis forskel på en almindelig mødeindkaldelse og overførsel af kundeoplysninger.
+It goes without saying that the levels of security in handling them will vary depending on the nature and sensitivity of the document. For example, there is a difference between a regular meeting call and transfer of customer information.
 
-### Juridisk gyldighed af e-mails
-I Danmark er der verserende sager for at afgøre hvorvidt e-mails er juridisk bindende på samme måde som almindelig brevudveksling, da der indtil nu har været domme der er faldet ud til begge sider.
+### Legal validity of emails
+In Denmark, there are pending cases to determine whether e-mails are legally binding in the same way as ordinary letter exchange, as judgments have so far been dropped on both sides.
 
-Digitalt signerede e-mails forventes at være gyldige på minimum samme niveau som fysiske breve/kontrakter, da man kan dokumentere afsender/underskriver.
+Digitally signed emails are expected to be valid at least the same level as physical letters / contracts, as one can document the sender / signer.
 
-Når der ikke benyttes digital signatur, samt i ethvert tvivlstilfælde om gyldigheden, retsvirkningerne eller øvrige lovgivningsmæssige rammer skal e-mail ikke benyttes.
+When no digital signature is used, and in any case of doubt as to the validity, legal effects or other regulatory framework, e-mail should not be used.
 
-Til uformel kommunikation og almindelig korrespondance forbliver e-mail dog et af de foretrukne værktøjer.
+However, for informal communication and regular correspondence, email remains one of the preferred tools.
 
-### Håndtering af indgående e-mails
-Enhver virksomhed eller privatperson skal kunne rette elektronisk henvendelse til ParsePort i form af e-mail, samt modtage et elektronisk svar.
+### Handling incoming emails
+Any company or individual should be able to make electronic contact with ParsePort in the form of e-mail, and receive an electronic response.
 
-Behandlingen af e-mail adskiller sig ikke fra modtagelsen af almindelig post, og enhver gyldig henvendelse bør søgt besvaret hurtigst muligt.
+The processing of e-mail does not differ from the receipt of regular mail, and any valid inquiry should be answered promptly.
 
-Såfremt der vil være behandlingstid eller ventetid på henvendelsen, bør afsender modtage en kvittering for modtagelse af henvendelsen.
+If there is processing time or waiting time for the inquiry, the sender should receive a receipt for receiving the inquiry.
 
-Som udgangspunkt vil ParsePort ikke modtage dokumenter via e-mail. Ønsker en kunde at sende deres regnskabsdata, henvises til at de anvender parseport.com til at uploade deres regnskabsdata.
+In principle, ParsePort will not receive documents via email. If a customer wants to submit their accounting data, please refer to using [parseport.com](https://parseport.com) to upload their accounting data.
 
-### Håndtering af udgående e-mails
-Enhver besvarelse af elektronisk post skal indeholde signatur der tilkendegiver ParsePort som afsender af meddelelsen.
+### Handling outgoing emails
+Any reply to an electronic mail must include a signature indicating ParsePort as the sender of the message.
 
-E-mail bør indeholde information omkring forventning til modtager i tilfælde af at meddelelsen er sendt til den forkerte.
+Email should contain information about expectation of recipient in case the message is sent to the wrong one.
 
-### Mailbokse
-Alt officiel elektronisk korrespondance til ParsePort stiles som udgangspunkt til hovedadressen [info@parseport.com](info@parseport.com).
+### Mailboxes
+All official electronic correspondence to ParsePort is initially based on the main address [info@parseport.com] (info@parseport.com).
 
-I forbindelse med planlagt fravær (ferie, fridage, eller lignende) på mere end én arbejdsdag, skal den enkelte medarbejder sikre, at afsendere af e-mail, som sender til en personlige postkasse, enten får besked via ”ikke tilstede”-funktionen i Outlook, eller at e-mailen omadresseres til en kollega(er) eller en fællespostkasse.
+In connection with scheduled absence (holidays, holidays, or the like) of more than one business day, each employee must ensure that senders of e-mails that send to a personal mailbox are either notified via the "not present" function in Outlook, or that the email is redirected to a colleague(s) or a shared mailbox.
 
-### SPAM og Mail-antivirus
-Alle e-mails til og fra ParsePort bliver scannet af Fusemail for både spam og virus. Såfremt meddelelser indeholder en af disse bliver de sat i karantæne hos Fusemail i 90 dage, hvorefter de bliver slettet.
+### SPAM and Mail antivirus
+All emails to and from ParsePort are scanned by Fusemail for both spam and viruses. If messages contain one of these, they are quarantined at Fusemail for 90 days and then deleted.
 
-Såfrem Fusemail identificerer en virus i en mail som kan fjernes sikkert, vil den sikre del af e-mailen (meddelelsen) blive leveret.
+If Fusemail identifies a virus in a mail that can be safely removed, the secure part of the email (message) will be delivered.
 
-Løsningen fra Fusemail agerer samtidig ”backup” hold for ParsePorts mailsystemer i det at Fusemail holder mail i op til 14 dage, såfremt der er problemer med at levere meddelelsen til ParsePort’s Exchange server.
+At the same time, the solution from Fusemail acts as a "backup" team for ParsePort's mail systems in that Fusemail holds mail for up to 14 days if there are problems delivering the message to ParsePort's Exchange server.
 
-## Produktionssystem (kundevendt system)
-ParsePorts primære forretning er oprettelse/generering af XBRL data.
+## Production system (customer-facing system)
+ParsePort's primary business is the creation / generation of XBRL data.
 
-### Systemet
-ParsePort giver kunder mulighed for at lave XBRL filer ud fra brug af tre forskellige interfaces.
+### The system
+ParsePort allows customers to create XBRL files using three different interfaces.
 
-1.	Hjemmeside med grafisk interface der præsenterer et login interface, hvor kunden ved hjælp af brugernavn og kodeord logger ind på en TLS 1.2 sikret side. Kunden kan derefter uploade en fil med data, hvorefter ParsePorts system konverterer/bearbejder den, og kunden kan derefter downloade XBRL-fil med data.
-2.	Excel Add-in der sættes op med kundens brugernavn/kodeord. Ved brug af Add-in overføres data-fil via TLS 1.2 til ParsePorts systemer, hvorefter systemet konverterer/bearbejder den, og returnerer en XBRL-fil med data.
-3.	API interface, til brug for kunders egne programmer/programmel. Således at kunden kan indbygge logikken fra ParsePort ind i egne programmer eller API understøttende programmel. API interfacet benyttes ved at kundens løsning kalder ParsePorts API via TLS 1.2 med en nøgle, samt data til konvertering/bearbejdning. ParsePorts system returnerer derefter XBRL-fil med data.
+1. Graphic interface website that presents a login interface where the customer logs in to a TLS 1.2 secured page using a username and password. The customer can then upload a data file, after which ParsePort's system converts / processes it, and the customer can then download the XBRL data file.
+2. Excel Add-in set up with customer's username / password. Using Add-in, the data file is transferred via TLS 1.2 to ParsePort's systems, after which the system converts / processes it and returns an XBRL file with data.
+3. API interface, for use by customers' own programs / software. So that the customer can embed the logic of ParsePort into their own applications or API supporting software. The API interface is used by the customer's solution calling ParsePorts API via TLS 1.2 with a key, as well as data for conversion / processing. ParsePort's system then returns the XBRL file of data.
 
-### Systemets tilgængelighed
-Systemet er tilgængeligt fra hele internettet, og er beskyttet i henhold til de to afsnit ”Teknisk sikkerhed” og ”Fysisk sikkerhed”.
+### System Availability
+The system is accessible from all over the Internet and is protected according to the two sections "Technical safety" and "Physical security".
 
 ### Data security
-Alt kommunikation med produktionsssystemet, skal være krypteret under transport over internettet minimum i henhold til TLS 1.2 standarden (RFC 5246).
+All communication with the production system must be encrypted during transport over the internet minimum according to the TLS 1.2 standard (RFC 5246).
 
-Alle data der er lagret i produktionssystemet, skal være segmenteret på en måde så det ikke er muligt for kunder på platformen at få adgang til hinandens data.
+All data stored in the production system must be segmented in a way that it is not possible for customers on the platform to access each other's data.
