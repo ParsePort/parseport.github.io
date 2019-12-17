@@ -60,9 +60,7 @@ There are two locations for data storage, depending on whether the data storage 
 Both ParsePort's internal and customer-facing IT systems are located at Global Connect in a professional ISAE 3402 approved as well as ISO 27001 and ISO 9001 certified data center on an IaaS platform. At Global Connect data is both physically and virtually secured against unauthorized access.
 
 ### Internally infrastructure
-To ensure centralization of data, as well as having a smaller attack surface, all employees work on a Microsoft Remote Desktop solution which, besides the mail platform, is the only place that stores internal data.
-
-**TODO** Office365 solution with MFA and audit trail
+To ensure centralization of data, as well as managing access control, everything runs in Office365, and audit trail is enabled. OneDrive is the only place that stores internal data. Furthermore, MFA is enabled for all services, used within ParsePorts domain. The XBRL service, is the manuel XBRL convertion, is performed on a Microsoft Remote Desktop solution, to ensure a minimal attack surface. As the XBRL service is the only process, where employees handles customer data.
 
 ### Customer-facing infrastructure
 The customer-facing infrastructure is used exclusively for data processing and conversion. A user is granted access with username and password, then the user uploads a file, that is being processed by the system. When the processing is complete, the user can retrieve the processed data. Afterwards both the uploaded and processed data are deleted.
