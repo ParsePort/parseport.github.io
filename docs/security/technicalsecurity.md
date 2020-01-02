@@ -25,5 +25,7 @@ If there is a request for integration via SAML2.0, then take contact and it will
 ## Transport Layer Security
 The transport layer security at https://xbrlapi.parseport.com grades [A+](https://www.ssllabs.com/ssltest/analyze.html?d=xbrlapi.parseport.com&hideResults=on), based on SSLlabs from Qualys. On a querterly basis the certificates are reviewed to ensure the grade can be held at A+.
 
+All parseport.com domains are behind a [DNSSEC](https://www.internetsociety.org/deploy360/dnssec/basics/), which protects against attackers whom could intercept your DNS queries.
+
 ### Protocol(s)
 At the moment, it is only TLS 1.2, which are accepted, until the TLS 1.3 is released.
