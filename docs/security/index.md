@@ -16,7 +16,7 @@ This section collects the security information public avaliable for the ParsePor
 ParsePort is on the process of getting the ISO 27001 certificate. Therefore all measures are or will be aligned with the ISO27001 ISMS.
 Access to data center and hosting environemnts follows the least privilleged principles. Access is limited to only a very limited set of developers, and the access is reassessed on a yearly basis.
 
-Access to the ParsePort environment is monitored with **TODO**, and counter measures are evaluated on a monthly basis.
+Access to the ParsePort environment is instantly logged and monitored, and counter measures are evaluated on a monthly basis.
 
 All environments are centrally managed and updated. Development follows Secure Software Development Life Cycle [S-SDLC](https://resources.infosecinstitute.com/intro-secure-software-development-life-cycle), and all requirements to new features are analysed with respect to security risks.
 
@@ -31,7 +31,7 @@ The primary data center for the ParsePort solutions is located in Denmark. We ha
 
 The three server setups are fully decoupled, and have their own networks. All servers are behind a firewall with active intrusion prevention.
 
-**TODO** Deployments are fully automated, which minimizes the access to the data center, and minimizes error prone manual tasks.
+**TODO** Deployments are fully automated, which minimizes the access to the data center, and minimizes error prone manual tasks. **TODO** Azure DevOps setup, is still missing the last configuration.
 
 ### IaaS in Microsoft Azure
 Services that cannot be solely run with Windows in a HyperV environment, are hosted at Azure. At the current state the following services run in Azure:
