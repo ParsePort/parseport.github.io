@@ -2,6 +2,7 @@
 title: Welcome
 permalink: /
 ---
+
 _This page is a test for how we can structure our documentation. We expect to have everything ready in the new year (2020)._
 
 

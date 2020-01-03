@@ -2,7 +2,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "rake", "~> 12"
-gem 'faraday', '~> 0.8.9'
+#gem 'faraday', '~> 0.9.0'
 gem "jekyll"
 # Optional: Add any custom plugins here.
 # Some useful examples are listed below
