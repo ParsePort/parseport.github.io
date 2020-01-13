@@ -42,11 +42,4 @@ swagger:
 # Exclude these files from the build process results.
 # Prevents them from showing up in the master branch which
 # is the live site.
-exclude:
-  - vendor
-  - internal
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - readme.md
-  - Rakefile
+exclude: ['/internal/*', '/Gemfile', '/Gemfile.lock', 'LICENSE', '/readme.md', 'Rakefile']

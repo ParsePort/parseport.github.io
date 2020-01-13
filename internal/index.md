@@ -1,8 +1,8 @@
 ---
 title: Internal documentation
-permalink: internal/
-has_children: true
-nav_order: 1
+#permalink: internal/
+#has_children: true
+#nav_order: 1
 has_toc: false
 ---
 
