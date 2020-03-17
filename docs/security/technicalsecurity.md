@@ -9,7 +9,7 @@ has_toc: false
 Development at ParsePort follows the Secure Software Development Life Cycle [S-SDLC](https://resources.infosecinstitute.com/intro-secure-software-development-life-cycle). In the CI/CD pipeline, ParsePort makes use of static code analysis, the following are used:
 * [SonarQube](https://www.sonarqube.org/) to scan our code for security vulnabilities, to ensure best pratises are followed. Furthermore, SonarQube is used to keep the maintainability high, which enable fast mitigations if any vulnability is found.
 * [Dependabot](https://dependabot.com/) used to scan our dependencies and 3rd party libraries.
-* **TODO** Update [PenTest]() On a yearly basis a penetration test is preformed against your environments. The result of the test, is used to update requirements cf. S-SDLC
+* **TODO** [PenTest]() On a yearly basis a penetration test is preformed against the ParsePort environments. The result of the test, is used to update requirements cf. S-SDLC
 
 
 ## Identity provider

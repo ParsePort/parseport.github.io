@@ -31,7 +31,7 @@ The primary data center for the ParsePort solutions is located in Denmark. We ha
 
 The three server setups are fully decoupled, and have their own networks. All servers are behind a firewall with active intrusion prevention.
 
-**TODO** Deployments are fully automated, which minimizes the access to the data center, and minimizes error prone manual tasks. **TODO** Azure DevOps setup, is still missing the last configuration.
+**TODO** Deployments are fully automated, which minimizes the access to the environemnts hosting the XBRL solution, and minimizes error prone manual tasks. **TODO** Azure DevOps setup is not 100% at this point in time.
 
 ### IaaS in Microsoft Azure
 Services that cannot be solely run with Windows in a HyperV environment, are hosted at Azure. At the current state the following services run in Azure:

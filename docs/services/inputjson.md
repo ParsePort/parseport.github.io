@@ -8,7 +8,7 @@ has_toc: false
 # ParsePort JSON format
 The ParsePort API accepts multiple formats, and the most common format is Excel. If you use Excel, ParsePort will help you to setup your Excel with ParsePort simplified tagging. if you are a partner, you can use the API, where the format can be either Excel with simplified tagging or you can use our JSON format. For JSON integration we have the following structure for the input data (explanations after the JSON example):
 
-**TODO** Add examples for GAAP, EBA, EIOPA and ESEF eg with accordion
+<!--**TODO** Add examples for GAAP, EBA, EIOPA and ESEF eg with accordion-->
 
 ```json
 {
@@ -302,7 +302,7 @@ All settings in the JSON can be customized per element, e.g. scale, which is set
 
 * `id` : unique identifier for the value and label. You can use this, if you would like to do postprocessing of the iXBRL output or to reference values in textual elements.
 * `label` : used to map the value with the correct XBRL element in the given taxonomy.
-* `value` : represents the actual content, which should be converted to a XBRL element in the XHTML. The content should be written as how you would present the content e.g. (1,234) or -1,234. For textual elements, it is possible to reference other values by using @@CorrelationId@@ where CorrelationId is `id` of the value being referenced.
+* `value` : represents the actual content, which should be converted to a XBRL element in the XHTML. The content should be written as how you would present the content e.g. (1,234) or -1,234. For textual elements, it is possible to reference other values by using _@@CorrelationId@@_ where CorrelationId is `id` of the value being referenced.
 * `itemType` : can take one of the following formats: `element` (default) / `content` / `footnote`
 * `calculations` : used to represent the narrower/wider specification in ESEF. Calculations consists of two parts, the `weight` which can be `1` for addition or `-1` for subtraction, `valueId` which is a reference to a `row` value.
 * `scale` : is used for monetary values, so you can indicate values in millions without writing out 6 zeros. 3 indicates that the values are in thousands. 6 indicates that the values are in millions.
