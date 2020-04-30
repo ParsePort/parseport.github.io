@@ -28,4 +28,4 @@ The transport layer security at https://xbrlapi.parseport.com grades [A+](https:
 All parseport.com domains are behind a [DNSSEC](https://www.internetsociety.org/deploy360/dnssec/basics/), which protects against attackers whom could intercept DNS queries.
 
 ### Protocol(s)
-At the moment, it is only TLS 1.2, which are accepted. Using TLS 1.3 will be considered for the next review of SSL for the production server.
+At the moment, it is only TLS 1.2, which are accepted. Using TLS 1.3 will be considered for the next review of SSL for the production environment.
