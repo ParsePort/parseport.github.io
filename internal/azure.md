@@ -34,8 +34,9 @@ Service to convert html to pdf, the input file is a HTML, the output is pdf. The
 [`bash file for the actual service behind the dotnet code`](https://github.com/ParsePort/DockerImages/blob/master/watchforhtml.sh)
 
 * **validation** (https://parseport-validation.azurewebsites.net/)
-TODO
-...
+
+Service to validate XBRL, the input file is a zip file, the output is json or HTML. The docker container is constructed to watch for folders and look for `.zip` files in this folder. The validation is done via Arelle.
+
 [`bash file for the actual service behind the dotnet code`](https://github.com/ParsePort/DockerImages/blob/master/arelle_validation.sh)
 
 * **pdf2html** (https://linuxservices.azurewebsites.net/)
@@ -62,17 +63,24 @@ while true; do
 Line 1 - a while loop to make sure the process nerver ends. Line 2 - a for-loop which lopps over all files (the f flag stands it is files only) in the folder defined in the declared variable `dir` loop to watch for certain files. Line 3 - assign the variable `f` to the variable `input`. When you want the value of a variable you add `$` in front. Line 4 a if-statement, where the last 4 charecters of the variable `f` is checked for being equal to `".pdf"`.
 
 
-## Health service
-Not running proper due to timing constraints - runs locally. Issues with autehntication against production
+## Healthcheck service
+Service to control that all environments (Production and Test) runs as expected. The service sends an Excel file for conversion, and expect a result within X minutes. The healthcheck service does also run a cronjob for controlling all public endpoints with respect to Mozilla Observatory (control of HTTPS headers).
+
+OBS!: At the moment there is an issues with autehntication against production
+
+Deployed to: https://parseport-healthcheck.azurewebsites.net/
+
+## Test Case
+running as a CDN solution and a docker container for the actual dotnet solution
 TODO
 
-## Test Cases
-running as a CDN solution and a docker container
-TODO
+Deployed to: https://testcase.parseport.com/
 
 ## OCR services
-create drawing (communication with html2pdf and Azure cognitive services)
-TODO
+If all fonts and all unicode chars are known, everything will be loaded from database, else it will start creating a pdf with unicode chars and unicode value, run this PDF through Azure cognitive services, and save the result to database and serve the result.
+The OCR services caches the conversions, to speed up response time. The service does also caches the status, to avoid database interactions.
+
+Deployed to: https://parseport-ocr.azurewebsites.net/
 
 ## Docker compose vs single docker container
 Two different configuration modes are available for Azure web apps, single containers or compose. Single containers will be what you have in a normal Dockerfile, and the exposed port will be available at port 80 in the app service. Docker compose is like `docker-compose.yml`, and ressources can be linked.
