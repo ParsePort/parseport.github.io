@@ -71,8 +71,7 @@ OBS!: At the moment there is an issues with autehntication against production
 Deployed to: https://parseport-healthcheck.azurewebsites.net/
 
 ## Test Case
-running as a CDN solution and a docker container for the actual dotnet solution
-TODO
+The Test Case solution is build to act as an integration test towards any ParsePort environment, so you can have a large test set, which can be tested on Test, Production, even branch specific setups. The Test Case solution is deployed as an CDN hosted angular app with a backend deployed as an app service.
 
 Deployed to: https://testcase.parseport.com/
 
