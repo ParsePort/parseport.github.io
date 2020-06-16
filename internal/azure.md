@@ -18,33 +18,35 @@ Overall information about setting up linux containers in app service, can be fun
 
 ## Linux services
 The solution at https://github.com/ParsePort/ParsePort.XBRL.LinuxServices, contains the API and logic to combine a docker image for 4 different services. The C# code is constructed with a few configuration strings, to indicate which services that are available. The backend code contains logic to expose files generated in a docker container, in this setup the C# solution saves a set of files, which then are handled by a docker container, and when the new file is produced, the C# code can publish the result via the API.
+For all docker servies, the producers, the setup uses a base image for setting up the environment, then there is a small docker image, using the base image, which executes a bash script to do what you would have done at a terminal.
 
-* **pdf2html**
 
-Service to convert PDF to HTML, the input file is a PDF, the output is HTML. The docker container is constructed to watch for files endning with `.pdf`, the container uses a batch script to do this operation. The docker container is running a linux, and everything is setup in the base image, and then a simple docker image exposing bash file.
+* **iXBRLViewer** (https://linuxservices1.azurewebsites.net/)
 
-[`bash file for the actual service behind the dotnet code``](https://github.com/ParsePort/DockerImages/blob/master/watchforfiles.sh)
+Service to create a open source iXBRL viewer from any given taxonomy package. The input is a xHTML file and a set of taxonomy packages (zip files), the output is a HTML, including all CSS and Javascript. The docker container is constructed to watch for folders containing a xHTML with the same name of the folder, the container uses a batch script to do this operation.
 
-* **iXBRLViewer**
+[`bash file for the actual service behind the dotnet code`](https://github.com/ParsePort/DockerImages/blob/master/ixbrlviewerbuilder.sh)
 
-Service to create a open source iXBRL viewer from any given taxonomy package. The input is a xHTML file and a set of taxonomy packages (zip files), the output is a HTML, including all CSS and Javascript. The docker container is constructed to watch for folders containing a xHTML with the same name of the folder, the container uses a batch script to do this operation. The docker container is running a linux, and everything is setup in the base image, and then a simple docker image exposing bash file.
+* **html2pdf** (https://linuxservices2.azurewebsites.net/)
 
-[`bash file for the actual service behind the dotnet code``](https://github.com/ParsePort/DockerImages/blob/master/ixbrlviewerbuilder.sh)
-
-* **html2pdf**
-
-Service to convert html to pdf, the input file is a HTML, the output is png. The docker container is constructed to watch for files endning with `.html`, the container uses a batch script, and is running a headless chrome to do this operation. The docker container is running a linux, and everything is setup in the base image, and then a simple docker image exposing bash file.
+Service to convert html to pdf, the input file is a HTML, the output is pdf. The docker container is constructed to watch for files endning with `.html`, the container uses a batch script, and it is running a headless chrome to do this operation.
 
 [`bash file for the actual service behind the dotnet code`](https://github.com/ParsePort/DockerImages/blob/master/watchforhtml.sh)
 
-* **validation**
+* **validation** (https://parseport-validation.azurewebsites.net/)
 TODO
 ...
-[`bash file for the actual service behind the dotnet code``](https://github.com/ParsePort/DockerImages/blob/master/arelle_validation.sh)
+[`bash file for the actual service behind the dotnet code`](https://github.com/ParsePort/DockerImages/blob/master/arelle_validation.sh)
+
+* **pdf2html** (https://linuxservices.azurewebsites.net/)
+
+Service to convert PDF to HTML, the input file is a PDF, the output is HTML. The docker container is constructed to watch for files endning with `.pdf`, the container uses a batch script to do this operation.
+
+[`bash file for the actual service behind the dotnet code`](https://github.com/ParsePort/DockerImages/blob/master/watchforfiles.sh)
 
 
 ### Bash for docker files
-Linux services uses tools you would call via System.Diagnostics.Process, but to make it independent of OS, the communication to the processes are made via file transfer and a producer/consumer pattern. Therefore it is possible to resuse the Linux services for multiple purposes, without changing a lot in the code. All commands are handled in a bash script (if you are a bit familiar with your commnad line, bat, or even powershell, it will be relatively easy to follow). The idea is that each service has a base docker image, which handles all the installation of dependencies, OS version and so on. Then the docker image itself, will only run a bash script (.sh file), in this bash script, the main loop is a filewatcher (or folder watcher), each time a certain file is found and not produced, the service is called - it could be chrome headless via cli, where input format is html, and the output will be png, futhermore a .process file is created to make the bash script run in parallel (we use nohub for this).
+Linux services uses tools you would call via System.Diagnostics.Process, but to make it independent of OS, the communication to the processes are made via file transfer and a producer/consumer pattern. Therefore it is possible to resuse the Linux services for multiple purposes, without changing a lot in the code. All commands are handled in a bash script (if you are a bit familiar with your command line, terminal, bat, or even powershell, it will be relatively easy to follow). The idea is that each service has a base docker image, which handles all the installation of dependencies, OS version and so on. Then the docker image itself, will only run a bash script (.sh file), in this bash script, the main loop is a filewatcher (or folder watcher), each time a certain file is found and not produced, the service is called - it could be chrome headless via cli, where input format is html, and the output will be pdf, futhermore a .process file is created to make the bash script run in parallel (we use nohub for this).
 
 [`sed`](https://www.gnu.org/software/sed/manual/sed.html) (**s**tream **ed**itor) is used for search/replace in files.
 
