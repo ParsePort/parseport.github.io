@@ -1,0 +1,274 @@
+<!DOCTYPE html> <html lang="en-US"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <title>JSON format for ParsePort API - ParsePort XBRL Service</title> <link rel="shortcut icon" href="https://parseport.github.io//favicon.ico" type="image/x-icon"> <link rel="stylesheet" href="https://parseport.github.io//assets/css/just-the-docs-default.css"> <script type="text/javascript" src="https://parseport.github.io//assets/js/vendor/lunr.min.js"></script> <script type="text/javascript" src="https://parseport.github.io//assets/js/just-the-docs.js"></script> <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Begin Jekyll SEO tag v2.6.1 --> <title>JSON format for ParsePort API | ParsePort XBRL Service</title> <meta name="generator" content="Jekyll v3.8.7" /> <meta property="og:title" content="JSON format for ParsePort API" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="Documentation for ParsePort solutions" /> <meta property="og:description" content="Documentation for ParsePort solutions" /> <link rel="canonical" href="https://parseport.github.io//services/api/json" /> <meta property="og:url" content="https://parseport.github.io//services/api/json" /> <meta property="og:site_name" content="ParsePort XBRL Service" /> <script type="application/ld+json"> {"description":"Documentation for ParsePort solutions","@type":"WebPage","headline":"JSON format for ParsePort API","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://parseport.github.io//images/logo.png"}},"url":"https://parseport.github.io//services/api/json","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --> </head> <body> <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> <symbol id="svg-link" viewBox="0 0 24 24"> <title>Link</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"> <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path> </svg> </symbol> <symbol id="svg-search" viewBox="0 0 24 24"> <title>Search</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"> <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line> </svg> </symbol> <symbol id="svg-menu" viewBox="0 0 24 24"> <title>Menu</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"> <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line> </svg> </symbol> <symbol id="svg-arrow-right" viewBox="0 0 24 24"> <title>Expand</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"> <polyline points="9 18 15 12 9 6"></polyline> </svg> </symbol> <symbol id="svg-doc" viewBox="0 0 24 24"> <title>Document</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"> <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline> </svg> </symbol> </svg> <div class="side-bar"> <div class="site-header"> <a href="https://parseport.github.io//" class="site-title lh-tight"> <div class="site-logo"></div> </a> <a href="#" id="menu-button" class="site-button"> <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg> </a> </div> <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav"> <ul class="nav-list"><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://parseport.github.io//services/" class="nav-list-link">Services</a><ul class="nav-list "><li class="nav-list-item active"><a href="https://parseport.github.io//services/api/json" class="nav-list-link active">JSON format for ParsePort API</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://parseport.github.io//architecture/" class="nav-list-link">Architecture</a><ul class="nav-list "><li class="nav-list-item "><a href="https://parseport.github.io//architecture/sla" class="nav-list-link">Standard level agreements</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://parseport.github.io//security/" class="nav-list-link">Security</a><ul class="nav-list "><li class="nav-list-item "><a href="https://parseport.github.io//security/policy/" class="nav-list-link">Security policy</a></li><li class="nav-list-item "><a href="https://parseport.github.io//security/technicalsecurity/" class="nav-list-link">Technical security</a></li><li class="nav-list-item "><a href="https://parseport.github.io//security/datahandling/" class="nav-list-link">Data handling</a></li></ul></li><li class="nav-list-item"><a href="https://parseport.github.io//" class="nav-list-link">Welcome</a></li></ul> </nav> <footer class="site-footer"> This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll. </footer> </div> <div class="main" id="top"> <div id="main-header" class="main-header"> <div class="search"> <div class="search-input-wrap"> <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search ParsePort XBRL Service" aria-label="Search ParsePort XBRL Service" autocomplete="off"> <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label> </div> <div id="search-results" class="search-results"></div> </div> <nav aria-label="Auxiliary" class="aux-nav"> <ul class="aux-nav-list"> <li class="aux-nav-list-item"> <a href="//parseport.com/" class="site-button" > ParsePort.com </a> </li> </ul> </nav> </div> <div id="main-content-wrap" class="main-content-wrap"> <nav aria-label="Breadcrumb" class="breadcrumb-nav"> <ol class="breadcrumb-nav-list"> <li class="breadcrumb-nav-list-item"><a href="https://parseport.github.io//services/">Services</a></li> <li class="breadcrumb-nav-list-item"><span>JSON format for ParsePort API</span></li> </ol> </nav> <div id="main-content" class="main-content" role="main"> <h1 id="parseport-json-format"> <a href="#parseport-json-format" aria-labelledby="parseport-json-format" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> ParsePort JSON format </h1> <p>The ParsePort API accepts multiple formats, and the most common format is Excel. If you use Excel, ParsePort will help you to setup your Excel with ParsePort simplified tagging. if you are a partner, you can use the API, where the format can be either Excel with simplified tagging or you can use our JSON format. For JSON integration we have the following structure for the input data (explanations after the JSON example):</p> <!--**TODO** Add examples for GAAP, EBA, EIOPA and ESEF eg with accordion--> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"configuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ESEF 20170331"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entrypoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"taxonomyExtension"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"baseUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.CompanyX.com/taxonomy/2018-12-31"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CX"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CX_20181231"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"containers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General data label"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General data label"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"column"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General data consolidated current year"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"processLabel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__11"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Identifier scheme"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://standards.iso.org/iso/17442"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__13"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entrypoint"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__14"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Currency code"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__17"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name of reporting entity or other means of identification"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CompanyX"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__21"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country of incorporation"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Denmark"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__29"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Date of start of reporting period"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-01"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__30"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Date of end of reporting period"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-31"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__31"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Date of start of previous reporting period"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-01"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__32"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Date of end of previous reporting period"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-31"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general-data-esef__7__36"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ID number of reporting entity"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"223300BXXJITVLKVYY11"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Income statement"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"column"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"processLabel"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__7"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3,156.1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__9"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other operating income"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6.3"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__10"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Materials, supplies and subcontracting"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1,371.9"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__11"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personnel cost"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1,006.5"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__12"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Depreciation and impairments"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-119.9"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__13"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other operating expenses"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-498.0"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"calculations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__7"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__9"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__10"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__11"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__12"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__13"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">],</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__15"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operating profit"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"166.1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__10__17"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Share of associates' and joint ventures' result"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.0"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"periodId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CY"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"column"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"processLabel"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__12__7"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3,137.2"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"income-statement__12__9"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other operating income"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"227.2"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"periodId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LY"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comprehensive income"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"column"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"processLabel"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comprehensive-income__10__7"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Profit for the period"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98.3"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comprehensive-income__10__9"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"isNegative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"element"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cash flow hedges"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-13.4"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <p>Overall the JSON format follows the structure from Excel, where you would have a sheet with settings, and then a set of sheets (here <code class="language-plaintext highlighter-rouge">container</code>´s) with a table format (<code class="language-plaintext highlighter-rouge">rows</code> and <code class="language-plaintext highlighter-rouge">columns</code>).</p> <ul> <li><code class="language-plaintext highlighter-rouge">container</code> : has an <code class="language-plaintext highlighter-rouge">id</code> and a set of <code class="language-plaintext highlighter-rouge">columns</code>. <ul> <li><code class="language-plaintext highlighter-rouge">General data label</code> : a container to specify general settings / data such as reporting company, start and end dates for the reporting period.</li> </ul> </li> <li> <p><code class="language-plaintext highlighter-rouge">columns</code> / <code class="language-plaintext highlighter-rouge">rows</code> : provides an ordering of the elements. Column and Row is used for ordering of the elements. <code class="language-plaintext highlighter-rouge">columns</code> and <code class="language-plaintext highlighter-rouge">rows</code> have the same terminology as for Excel.</p> </li> <li><code class="language-plaintext highlighter-rouge">configuration</code> : used to set the scope of the conversion, overall setting for <code class="language-plaintext highlighter-rouge">language</code> in ISO 639-1 format, sets the taxonomy, for the example here it is ESEF (avaliable taxonomies can be found <a href="https://xbrlapi.parseport.com/api/taxonomies">here</a>)</li> <li><code class="language-plaintext highlighter-rouge">taxonomyExtension</code> : <ul> <li><code class="language-plaintext highlighter-rouge">baseUri</code> : sets the namespace for the custom part of the taxonomy, standard naming is: company website + /taxonomy/ + period end date e.g. “https://www.CompanyX.com/taxonomy/2018-12-31”</li> <li><code class="language-plaintext highlighter-rouge">prefix</code> : used for setting a prefix on the XBRL elements in the iXBRL document.</li> <li><code class="language-plaintext highlighter-rouge">name</code> : used for the filename of the resulting iXBRL package (available as a zip file).</li> </ul> </li> </ul> <p>All settings in the JSON can be customized per element, e.g. scale, which is set as 6 per element. Settings are inherited, so you can specific general settings like <code class="language-plaintext highlighter-rouge">language</code> as an overall setting, and then change it at certain elements.</p> <ul> <li><code class="language-plaintext highlighter-rouge">id</code> : unique identifier for the value and label. You can use this, if you would like to do postprocessing of the iXBRL output or to reference values in textual elements.</li> <li><code class="language-plaintext highlighter-rouge">label</code> : used to map the value with the correct XBRL element in the given taxonomy.</li> <li><code class="language-plaintext highlighter-rouge">value</code> : represents the actual content, which should be converted to a XBRL element in the XHTML. The content should be written as how you would present the content e.g. (1,234) or -1,234. For textual elements, it is possible to reference other values by using <em>@@CorrelationId@@</em> where CorrelationId is <code class="language-plaintext highlighter-rouge">id</code> of the value being referenced.</li> <li><code class="language-plaintext highlighter-rouge">itemType</code> : can take one of the following formats: <code class="language-plaintext highlighter-rouge">element</code> (default) / <code class="language-plaintext highlighter-rouge">content</code> / <code class="language-plaintext highlighter-rouge">footnote</code></li> <li><code class="language-plaintext highlighter-rouge">calculations</code> : used to represent the narrower/wider specification in ESEF. Calculations consists of two parts, the <code class="language-plaintext highlighter-rouge">weight</code> which can be <code class="language-plaintext highlighter-rouge">1</code> for addition or <code class="language-plaintext highlighter-rouge">-1</code> for subtraction, <code class="language-plaintext highlighter-rouge">valueId</code> which is a reference to a <code class="language-plaintext highlighter-rouge">row</code> value.</li> <li><code class="language-plaintext highlighter-rouge">scale</code> : is used for monetary values, so you can indicate values in millions without writing out 6 zeros. 3 indicates that the values are in thousands. 6 indicates that the values are in millions.</li> <li><code class="language-plaintext highlighter-rouge">isNegative</code> : indicates whether the value should be negative or not, even if the value is written as a positive number.</li> <li><code class="language-plaintext highlighter-rouge">style</code> : indicates a class to add for the XBRL element in the XHTML output.</li> <li><code class="language-plaintext highlighter-rouge">processLabel</code> : indicates whether we should make a lookup of the label in the database, for tables with header and row label, the <code class="language-plaintext highlighter-rouge">processLabel</code> can be used to lookup both labels.</li> <li><code class="language-plaintext highlighter-rouge">language</code> : the language of the <code class="language-plaintext highlighter-rouge">value</code>/<code class="language-plaintext highlighter-rouge">label</code> in ISO 639-1 format.</li> <li><code class="language-plaintext highlighter-rouge">periodId</code> : reference to a representation of the period for the given values. The reference can be to standard periods defined by ParsePort (<code class="language-plaintext highlighter-rouge">CY</code> current year and <code class="language-plaintext highlighter-rouge">LY</code> last year), or to periods defined in <code class="language-plaintext highlighter-rouge">General data</code>.</li> </ul> <hr> <footer> <p class="text-small text-grey-dk-000 mb-0">Copyright &copy; 2020 ParsePort.</p> </footer> </div> </div> <div class="search-overlay"></div> </div> </body> </html>

@@ -1,0 +1,314 @@
+{"0": {
+    "doc": "Data handling",
+    "title": "Data handling",
+    "content": "A typical data flow for the ParsePort XBRL service has the following four steps: . | Upload your data to ParsePort (TLS 1.2) . | Use your credentials or token (SAML 2.0) | Data is placed in memory | . | ParsePort extract and convert data from your upload . | The conversion starts, time to live for a conversion is maximum 2 hours | . | You can download the report from ParsePort (TLS 1.2) . | You have 15 minutes to download the report after the conversion is completed | . | ParsePort cleans up and delete all data from memory | . The four steps can be visualized like the following: . Time to live in memory . All data handled by ParsePort will live for 15 minutes after processing. If there is a need for having certain data available for longer than 15 minutes, e.g. if you use our collaborated space, you can postpone the deletion with 15 minutes,until you have finished your tasks. ",
+    "url": "https://parseport.github.io//security/datahandling/",
+    "relUrl": "/security/datahandling/"
+  },"1": {
+    "doc": "Data handling",
+    "title": "What data are stored when using ParsePort solutions",
+    "content": "When uploading data to ParsePort all data handling are done in memory, and no physical files are stored at the servers. What is saved, is an id, userId for whom started the process and the logs for the processing of your data. The id and userId can be used for retrieve logs, in case an error happens, and we need to contact you, to solve the issue. When signing up for ParsePort services, you have to provide Name, Address, E-mail, Phone and Billing information. The privacy policies for ParsePort is available here: https://parseport.com/cookies-and-privacy-policy/ . ",
+    "url": "https://parseport.github.io//security/datahandling/#what-data-are-stored-when-using-parseport-solutions",
+    "relUrl": "/security/datahandling/#what-data-are-stored-when-using-parseport-solutions"
+  },"2": {
+    "doc": "Services",
+    "title": "Services",
+    "content": "Overall the ParsePort API has four services to offer, and then one service for providing inputs to the other four services. The four services can be used independently or in steps starting with: [Extract] - the service for disassamble your financhial data, this can be from JSON, Excel, CSV or even Word. Then [Conversion] which adds meta data to your finansial data and translate your values into XBRL. [Validation] validates the XBRL against the given taxonomy, to make sure that the correct rules are followed. The last step is to [Render] the validated XBRL, and transform it to either XHTML or JSON, which then can be used to report your data to your local authorities. [Taxonomies] provides a set of taxonomies support by ParsePort. Furthermore, [Taxonomies] provides generel setttings you can use in your input to ParsePort API. In the following you can read about the used structure for the ParsePort API. If you would like to use the API, you can find the documentation for the input format, please visit JSON input for API. ",
+    "url": "https://parseport.github.io//services/",
+    "relUrl": "/services/"
+  },"3": {
+    "doc": "Services",
+    "title": "API structure",
+    "content": "For all services we have the following endpoints: . POST api/{service} GET api/{service}/{id}/status GET api/{service}/{id}/errors GET api/{service}/{id} . POST api/{service} . To start a service, you have to POST the required files to the service, you will then receive a guid id, to get the status of the service and to download the result. GET api/{service}/{id}/status . For services where the processing contains multiple steps, you can get the progression at the endpoint. The endpoint returns JSON, with a boolean value indication if the process is completed. GET api/{service}/{id}/errors . If an error is present in e.g. a conversion of Excel to iXBRL, you will get the validation errors here. GET api/{service}/{id}/report . This endpoint let you download the result of the process done by the service, it could be a PDF, a HTML document or the like. ",
+    "url": "https://parseport.github.io//services/#api-structure",
+    "relUrl": "/services/#api-structure"
+  },"4": {
+    "doc": "Services",
+    "title": "Available services in ParsePort API",
+    "content": "Here you can find the entry points for https://xbrlapi.parseport.com, and a short summary. Please visit https://xbrlapi.parseport.com for more information. | POST /api/conversion/convert . Converts one or more files. Requires correct file extension (xl*, doc*, csv, xml, json). It is advised to use the structured file endpoints (/json, /xml, /csv) when possible as they allow greater control over the conversion. | POST /api/conversion/json . Converts a json file. | POST /api/conversion/csv . Converts a csv file. | POST /api/conversion/xml . Converts a xml file. | GET /api/conversion/{conversionId}/status . Returns the status. | GET /api/conversion/{conversionId}/errors . Returns errors, if any. | GET /api/conversion/{conversionId}/report . Downloads the report. | GET /api/conversion/{conversionId}/xbrl . Downloads the xbrl file. | POST /api/conversion/{conversionId}/validate . Validates a conversion against the danish authorities. Only supported for DK ÅRL taxonomies. | GET /api/conversion/{conversionId}/customtaxonomy . Download the custom taxonomy for a given conversion. Only supported for DK IFRS taxonomies. | POST /api/extract . Extracts the facts from a XBRL file. | GET /api/extract/{extractId}/status . Returns the status. | GET /api/extract/{extractId}/errors . Returns errors, if any. | GET /api/extract/{extractId}/facts . Returns the facts as json. | POST /api/render . Generates a HTML or JSON report from a XBRL file. | GET /api/render/{renderId}/status . Returns the status. | GET /api/render/{renderId}/errors . Returns errors, if any. | GET /api/render/{renderId}/report . Downloads the report. | GET /api/taxonomies . | GET /api/taxonomies/{taxonomyId}/modules . | GET /api/taxonomies/{taxonomyId}/periods . | GET /api/taxonomies/{taxonomyId}/modules/{moduleId}/tags . | POST /api/validate . Validates a xbrl file against the taxonomy and any assertions. | GET /api/validate/{validationId}/status . Returns the status. | GET /api/validate/{validationId}/errors . Returns errors, if any. | . ",
+    "url": "https://parseport.github.io//services/#available-services-in-parseport-api",
+    "relUrl": "/services/#available-services-in-parseport-api"
+  },"5": {
+    "doc": "Architecture",
+    "title": "Architecture",
+    "content": "At ParsePort the most important is: XBRL made simple - this is also reflected in the architecture. Furthermore, the mantra is to make it as simple as possible for the end users, the struggle about understanding XBRL is the task for ParsePort. The architecture for the ParsePort solution is scalable, flexible and secure. The applied design principles are to have isolated services, where sharing between services uses the same formats as expected from the API entry points. Overall the architecture is a service-oriented architecture, which is explained in the following section. ",
+    "url": "https://parseport.github.io//architecture/",
+    "relUrl": "/architecture/"
+  },"6": {
+    "doc": "Architecture",
+    "title": "Service-Oriented Architecture",
+    "content": "The ParsePort solution has a service-oriented architecture, with a simple service bus with minimal influence on the business logic. The service-oriented architecture, provides a large flexibility and at the same time it is possible to handle security requirements from a central place (e.g. wrapping messages, provide timeouts for data and so on). The architecture follows and supports the process of converting a financial report in e.g. Excel to a XBRL filing report. One of the benefits here, is that the process of converting can be started at any state, if you for example already have the XBRL, then the solution can render the document to XHTML. The overall architecture is present here, and each of the services are described in the following sections. The architecture is built to be able to scale, therefore no data is stored to physical files, as it would not be possible to share between multiple nodes. If there is a need for files, it is handled as blob storage, which can be shared in memory. The persistence in the system is used to store settings, user accounts and for the automatically mapping between your labels and the correct XBRL element. No customer data is persisted in the database. API Controllers . The API controllers are responsible for handling the input data and add requests to the service bus. Service bus . To be able to have a central mechanism for scaling our solution, the solution is built around a service bus. The solution can then be scaled for each of our services, if there is a huge load on a specific part of the solution. The service bus implementation service bus is built upon MassTransit. With a service bus implementation, it is possible to spin up arbitrary producers in the network, thereby minimize waiting time due to a filled queue. With respect to the data handling in the ParsePort solution, the service bus is used to signal when data should be deleted. In the same way, this also makes it possible to postpone the deletion in a simple way. Data Extract . The task for the service is to disassemble your financial data, this can be from JSON, Excel, CSV or even Word. The service split all relevant data and transform it into the JSON format used by the ParsePort API. Parsing . The task for this service is to analyse the input and provide a structure on the input received. This service is used by data extraction, an example is that ParsePort have created simplified tagging, therefore a need to parse the tagging, so the data extraction has easier processing. Another usage is the way calculations are found in Excel sheets, where the parsing service extract all information about formulas in Excel, and transform it to calculations that can be used in e.g. the ESEF taxonomy. Conversion . The task for this service is to add meta data to your financial data (which we disassembled via Data Extraction or from the JSON format) and translate your values into XBRL. Validation . This service is responsible for validation of any XBRL against a given taxonomy. The result of this service is a set of warnings and errors, if the XBRL does not follow the ruleset of the given taxonomy. Render . This service is responsible for transforming valid XBRL into either XHTML, JSON or any other format which the XBRL should have. Also, if there is any postprocessing that needs to be handled, it will be in this service. If there are any special requirements from your local authorities with respect to reporting, please contact us, then we might be able to handle your special case in the render service. ",
+    "url": "https://parseport.github.io//architecture/#service-oriented-architecture",
+    "relUrl": "/architecture/#service-oriented-architecture"
+  },"7": {
+    "doc": "Security",
+    "title": "Security",
+    "content": "This section collects the security information public avaliable for the ParsePort solution and ParsePort organisation. The security documentation is split into multiple parts: . | Security policy - ParsePort security policy (public part). | Technical security - Techincal security for e.g. integration towards ParsePort. | Data handling - Flow for how data is handled and time to live for data at ParsePort. | . ",
+    "url": "https://parseport.github.io//security/",
+    "relUrl": "/security/"
+  },"8": {
+    "doc": "Security",
+    "title": "Measures",
+    "content": "ParsePort is on the process of getting the ISO 27001 certificate. Therefore all measures are or will be aligned with the ISO27001 ISMS. Access to data center and hosting environemnts follows the least privilleged principles. Access is limited to only a very limited set of developers, and the access is reassessed on a yearly basis. Access to the ParsePort environment is instantly logged and monitored, and counter measures are evaluated on a monthly basis. All environments are centrally managed and updated. Development follows Secure Software Development Life Cycle S-SDLC, and all requirements to new features are analysed with respect to security risks. ",
+    "url": "https://parseport.github.io//security/#measures",
+    "relUrl": "/security/#measures"
+  },"9": {
+    "doc": "Security",
+    "title": "Policies",
+    "content": "ParsePort security polices can be found here: Security policies. Please contact us, if you as a partner have any security related questions, which are not answered in the policies or in Technical security. ",
+    "url": "https://parseport.github.io//security/#policies",
+    "relUrl": "/security/#policies"
+  },"10": {
+    "doc": "Security",
+    "title": "Hosting providers",
+    "content": "At ParsePort we have two suppliers to host our solutions. The primary hosting provider is Global Connect (located in Denmark), and the secondary hosting provider is Azure (all services running in the area of North Europe). IaaS from Global Connect . The primary data center for the ParsePort solutions is located in Denmark. We have three similar and dedicated server setups for Test, PreProd and Prod, where Prod is the environment exposed publicly and PreProd is a fallback, if anything happens to Prod. All servers are managed by Global Connect, to ensure correct patching and regular updates of the OS. To access the server setups, ip-whitelisting is used in combination with MFA. The three server setups are fully decoupled, and have their own networks. All servers are behind a firewall with active intrusion prevention. TODO Deployments are fully automated, which minimizes the access to the environemnts hosting the XBRL solution, and minimizes error prone manual tasks. TODO Azure DevOps setup is not 100% at this point in time. IaaS in Microsoft Azure . Services that cannot be solely run with Windows in a HyperV environment, are hosted at Azure. At the current state the following services run in Azure: . | Service to build iXBRL viewer | Service to convert PDF to HTML | Service to supervise the health of all environments | Integration test of all environemnts | . All hosting from Azure are located in North Europe (Ireland). All integration towards Azure uses TLS 1.2, and the same policies are applied in Azure as for the IaaS from Global Connect. Deployments are fully automated, which minimizes error prone manual tasks. ",
+    "url": "https://parseport.github.io//security/#hosting-providers",
+    "relUrl": "/security/#hosting-providers"
+  },"11": {
+    "doc": "Welcome",
+    "title": "Documentation",
+    "content": "The documentation for Parseport consists of four parts, the source code, test code with test reports, Swagger documentation and this web page. This documentation page . The documentation written at this page, will be updated to reflect any changes. The documentation is stored in version control, which mean we can restore old documentation, and compare the changes. If you need more documentation, which is not part of this page, then please contact CTO Emil Holmegaard emil.holmegaard@parseport.com. Swagger.io . The ParsePort solution has full Swagger documentation. You can find the swagger documentation at https://xbrlapi.parseport.com . Test coverage . Test coverage reports can be found at codecov.io. You will need full access to ParsePort GitHub repositories, to access the test coverage reports. ",
+    "url": "https://parseport.github.io//#documentation",
+    "relUrl": "/#documentation"
+  },"12": {
+    "doc": "Welcome",
+    "title": "Welcome",
+    "content": "This page is a test for how we can structure our documentation. We expect to have everything ready in the new year (2020). ",
+    "url": "https://parseport.github.io//",
+    "relUrl": "/"
+  },"13": {
+    "doc": "JSON format for ParsePort API",
+    "title": "ParsePort JSON format",
+    "content": "The ParsePort API accepts multiple formats, and the most common format is Excel. If you use Excel, ParsePort will help you to setup your Excel with ParsePort simplified tagging. if you are a partner, you can use the API, where the format can be either Excel with simplified tagging or you can use our JSON format. For JSON integration we have the following structure for the input data (explanations after the JSON example): . { \"version\": 1.0, \"configuration\": { \"taxonomy\": \"ESEF 20170331\", \"language\": \"en\", \"entrypoint\": \"All\", \"taxonomyExtension\": { \"baseUri\": \"https://www.CompanyX.com/taxonomy/2018-12-31\", \"prefix\": \"CX\", \"name\": \"CX_20181231\" } }, \"containers\": [ { \"id\": \"General data label\", \"label\": \"General data label\", \"columns\": [ { \"column\": 7, \"label\": \"General data consolidated current year\", \"processLabel\": true, \"rows\": [ { \"id\": \"general-data-esef__7__11\", \"itemType\": \"element\", \"label\": \"Identifier scheme\", \"row\": 11, \"value\": \"http://standards.iso.org/iso/17442\" }, { \"id\": \"general-data-esef__7__13\", \"itemType\": \"element\", \"label\": \"Entrypoint\", \"row\": 13, \"value\": \"All\" }, { \"id\": \"general-data-esef__7__14\", \"itemType\": \"element\", \"label\": \"Currency code\", \"row\": 14, \"value\": \"EUR\" }, { \"id\": \"general-data-esef__7__17\", \"itemType\": \"element\", \"label\": \"Name of reporting entity or other means of identification\", \"row\": 17, \"value\": \"CompanyX\" }, { \"id\": \"general-data-esef__7__21\", \"itemType\": \"element\", \"label\": \"Country of incorporation\", \"row\": 21, \"value\": \"Denmark\" }, { \"id\": \"general-data-esef__7__29\", \"itemType\": \"element\", \"label\": \"Date of start of reporting period\", \"row\": 29, \"value\": \"2018-01-01\" }, { \"id\": \"general-data-esef__7__30\", \"itemType\": \"element\", \"label\": \"Date of end of reporting period\", \"row\": 30, \"value\": \"2018-12-31\" }, { \"id\": \"general-data-esef__7__31\", \"itemType\": \"element\", \"label\": \"Date of start of previous reporting period\", \"row\": 31, \"value\": \"2017-01-01\" }, { \"id\": \"general-data-esef__7__32\", \"itemType\": \"element\", \"label\": \"Date of end of previous reporting period\", \"row\": 32, \"value\": \"2017-12-31\" }, { \"id\": \"general-data-esef__7__36\", \"itemType\": \"element\", \"label\": \"ID number of reporting entity\", \"row\": 36, \"value\": \"223300BXXJITVLKVYY11\" } ] } ] }, { \"label\": \"Income statement\", \"columns\": [ { \"column\": 10, \"processLabel\": false, \"rows\": [ { \"id\": \"income-statement__10__7\", \"isNegative\": false, \"itemType\": \"element\", \"label\": \"Sales\", \"row\": 7, \"scale\": 6, \"style\": \"standard\", \"value\": \"3,156.1\" }, { \"id\": \"income-statement__10__9\", \"isNegative\": false, \"itemType\": \"element\", \"label\": \"Other operating income\", \"row\": 9, \"scale\": 6, \"style\": \"standard\", \"value\": \"6.3\" }, { \"id\": \"income-statement__10__10\", \"isNegative\": true, \"itemType\": \"element\", \"label\": \"Materials, supplies and subcontracting\", \"row\": 10, \"scale\": 6, \"value\": \"-1,371.9\" }, { \"id\": \"income-statement__10__11\", \"isNegative\": true, \"itemType\": \"element\", \"label\": \"Personnel cost\", \"row\": 11, \"scale\": 6, \"value\": \"-1,006.5\" }, { \"id\": \"income-statement__10__12\", \"isNegative\": true, \"itemType\": \"element\", \"label\": \"Depreciation and impairments\", \"row\": 12, \"scale\": 6, \"value\": \"-119.9\" }, { \"id\": \"income-statement__10__13\", \"isNegative\": true, \"itemType\": \"element\", \"label\": \"Other operating expenses\", \"row\": 13, \"scale\": 6, \"value\": \"-498.0\" }, { \"calculations\": [ { \"weight\": \"1\", \"valueId\": \"income-statement__10__7\" }, { \"weight\": \"1\", \"valueId\": \"income-statement__10__9\" }, { \"weight\": \"1\", \"valueId\": \"income-statement__10__10\" }, { \"weight\": \"1\", \"valueId\": \"income-statement__10__11\" }, { \"weight\": \"1\", \"valueId\": \"income-statement__10__12\" }, { \"weight\": \"1\", \"valueId\": \"income-statement__10__13\" } ], \"id\": \"income-statement__10__15\", \"isNegative\": false, \"itemType\": \"element\", \"label\": \"Operating profit\", \"row\": 15, \"scale\": 6, \"value\": \"166.1\" }, { \"id\": \"income-statement__10__17\", \"isNegative\": false, \"itemType\": \"element\", \"label\": \"Share of associates' and joint ventures' result\", \"row\": 17, \"scale\": 6, \"value\": \"4.0\" }, ... ], \"periodId\": \"CY\", \"scale\": 6 }, { \"column\": 12, \"processLabel\": false, \"rows\": [ { \"id\": \"income-statement__12__7\", \"isNegative\": false, \"itemType\": \"element\", \"label\": \"Sales\", \"row\": 7, \"scale\": 6, \"style\": \"standard\", \"value\": \"3,137.2\" }, { \"id\": \"income-statement__12__9\", \"isNegative\": false, \"itemType\": \"element\", \"label\": \"Other operating income\", \"row\": 9, \"scale\": 6, \"style\": \"standard\", \"value\": \"227.2\" }, ... ], \"periodId\": \"LY\", \"scale\": 6 } ] }, { \"label\": \"Comprehensive income\", \"columns\": [ { \"column\": 10, \"processLabel\": false, \"rows\": [ { \"id\": \"comprehensive-income__10__7\", \"isNegative\": false, \"itemType\": \"element\", \"label\": \"Profit for the period\", \"row\": 7, \"scale\": 6, \"style\": \"standard\", \"value\": \"98.3\" }, { \"id\": \"comprehensive-income__10__9\", \"isNegative\": true, \"itemType\": \"element\", \"label\": \"Cash flow hedges\", \"row\": 9, \"scale\": 6, \"style\": \"standard\", \"value\": \"-13.4\" }, ... ] }, ] } ] } . Overall the JSON format follows the structure from Excel, where you would have a sheet with settings, and then a set of sheets (here container´s) with a table format (rows and columns). | container : has an id and a set of columns. | General data label : a container to specify general settings / data such as reporting company, start and end dates for the reporting period. | . | columns / rows : provides an ordering of the elements. Column and Row is used for ordering of the elements. columns and rows have the same terminology as for Excel. | configuration : used to set the scope of the conversion, overall setting for language in ISO 639-1 format, sets the taxonomy, for the example here it is ESEF (avaliable taxonomies can be found here) | taxonomyExtension : . | baseUri : sets the namespace for the custom part of the taxonomy, standard naming is: company website + /taxonomy/ + period end date e.g. “https://www.CompanyX.com/taxonomy/2018-12-31” | prefix : used for setting a prefix on the XBRL elements in the iXBRL document. | name : used for the filename of the resulting iXBRL package (available as a zip file). | . | . All settings in the JSON can be customized per element, e.g. scale, which is set as 6 per element. Settings are inherited, so you can specific general settings like language as an overall setting, and then change it at certain elements. | id : unique identifier for the value and label. You can use this, if you would like to do postprocessing of the iXBRL output or to reference values in textual elements. | label : used to map the value with the correct XBRL element in the given taxonomy. | value : represents the actual content, which should be converted to a XBRL element in the XHTML. The content should be written as how you would present the content e.g. (1,234) or -1,234. For textual elements, it is possible to reference other values by using @@CorrelationId@@ where CorrelationId is id of the value being referenced. | itemType : can take one of the following formats: element (default) / content / footnote | calculations : used to represent the narrower/wider specification in ESEF. Calculations consists of two parts, the weight which can be 1 for addition or -1 for subtraction, valueId which is a reference to a row value. | scale : is used for monetary values, so you can indicate values in millions without writing out 6 zeros. 3 indicates that the values are in thousands. 6 indicates that the values are in millions. | isNegative : indicates whether the value should be negative or not, even if the value is written as a positive number. | style : indicates a class to add for the XBRL element in the XHTML output. | processLabel : indicates whether we should make a lookup of the label in the database, for tables with header and row label, the processLabel can be used to lookup both labels. | language : the language of the value/label in ISO 639-1 format. | periodId : reference to a representation of the period for the given values. The reference can be to standard periods defined by ParsePort (CY current year and LY last year), or to periods defined in General data. | . ",
+    "url": "https://parseport.github.io//services/api/json#parseport-json-format",
+    "relUrl": "/services/api/json#parseport-json-format"
+  },"14": {
+    "doc": "JSON format for ParsePort API",
+    "title": "JSON format for ParsePort API",
+    "content": " ",
+    "url": "https://parseport.github.io//services/api/json",
+    "relUrl": "/services/api/json"
+  },"15": {
+    "doc": "Security policy",
+    "title": "Security policy",
+    "content": "This document is a statement, addressed to ParsePort’s IT department, suppliers and partners, about the obligations they make when dealing with ParsePort’s data and IT systems. The document is also an information to people associated with ParsePort about the measures taken to secure the IT systems. ",
+    "url": "https://parseport.github.io//security/policy/",
+    "relUrl": "/security/policy/"
+  },"16": {
+    "doc": "Security policy",
+    "title": "Audience",
+    "content": "This policy applies to any person who has been granted access to the systems in ParsePort, when employed by ParsePort or as an external partner. At the same time, these persons are responsible for any third parties being permitted access to the equipment to comply with this policy when using the equipment. ",
+    "url": "https://parseport.github.io//security/policy/#audience",
+    "relUrl": "/security/policy/#audience"
+  },"17": {
+    "doc": "Security policy",
+    "title": "Common techincal security measures",
+    "content": "ParsePort’s network must always be based on standard protocols. Protocol selection is made by the IT manager. When changing the protocol, the external adviser must give their recommendation as well as help elucidate fall groups, sources of error, etc. The infrastructure must be up-to-date at all times and secured by the IT manager. The work is done under the direction of the Executive Board, and possibly through the assistance of an external competence advisor. The infrastructure must be reviewed once a year, in the context of planning the annual IT strategy plan. ",
+    "url": "https://parseport.github.io//security/policy/#common-techincal-security-measures",
+    "relUrl": "/security/policy/#common-techincal-security-measures"
+  },"18": {
+    "doc": "Security policy",
+    "title": "Suppliers, service og repair",
+    "content": "Servers and PCs should be installed with standard basic software that can be serviced by general IT vendors, unless there are significant reasons for otherwise. In order to ensure the easiest possible approach to complaints cases and remedying errors, the number of suppliers should be limited as far as possible. When equipment with built-in storage media such as PCs, servers and mobile devices is handed over to a third party, it must comply with ParsePort’s IT security rules. If the device contains company data and the storage medium is not encrypted, this must be done or the storage media removed. Security requirements for suppliers . ParsePort sets security requirements for IT vendors that must be met. Any IT vendor must comply with this IT security policy. At the same time, user rights management and control, physical security and regular backup routines of hardware and software are expected to be established. In addition, the systems must be protected by technologies and measures that limit the risk of attacks against systems operated on behalf of ParsePort. Technologies include, for example, firewall and antivirus, while measures can be active logging and policies enforced on the systems. In addition, ParsePort assumes that the supplier proactively monitors the outsourced equipment and other systems that may affect the operation and stability of solutions provided by the supplier on behalf of ParsePort. The scope of requirements for the supplier may vary depending on the type of service being outsourced. As there may be different SLAs and terms, refer to the individual contracts signed with the supplier. ",
+    "url": "https://parseport.github.io//security/policy/#suppliers-service-og-repair",
+    "relUrl": "/security/policy/#suppliers-service-og-repair"
+  },"19": {
+    "doc": "Security policy",
+    "title": "IT-equipment",
+    "content": "IT equipment must be approved by the IT manager and may only be used as long as the product continues to have an active life cycle in the form of software and hardware updates. ",
+    "url": "https://parseport.github.io//security/policy/#it-equipment",
+    "relUrl": "/security/policy/#it-equipment"
+  },"20": {
+    "doc": "Security policy",
+    "title": "Backups",
+    "content": "All internal infrastructure components and customer-facing systems must be backed up on an ongoing basis. The backup must be tested at least annually for possible restore of individual files, as well as of individual servers. ",
+    "url": "https://parseport.github.io//security/policy/#backups",
+    "relUrl": "/security/policy/#backups"
+  },"21": {
+    "doc": "Security policy",
+    "title": "Vira and hacking",
+    "content": "All ParsePort servers are secured with antivirus software that automatically downloads new definitions on an ongoing basis. All viruses known by the program are scanned for all relevant files. The log of the antivirus program is continuously monitored by the IT manager. Initially, it is impossible to provide adequate guidelines for viruses and virus attacks, but ParsePort continuously uses external IT security company with technical experience in incident and forensic handling to minimize damage and downtime and isolate the incident as quickly as possible. If, as an end user, it is suspected that the PC has received a virus, all tasks on the system must be canceled. The PC is isolated from the network and the IT manager is contacted. All PCs and servers must have a valid antivirus program installed. ParsePort’s internal network is protected by firewall and is isolated from other networks, only with access from the Global Connect internal zone from which the base infrastructure is operated. All zones at Global Connect are protected by both firewall and intrusion prevention system. Apart from firewall protection, all infrastructure located at Global Connect is also protected with the Intrusion Prevention System for additional protection. To ensure impartial testing of the systems, external penetration tests are performed at least once a year for all zones where ParsePort has equipment at Global Connect. Software to bypass system and application controls may only be used by professional security consultants and solely for the purpose of securing the systems. Furthermore, these must not be used without the written consent of the Executive Board and the IT manager. ",
+    "url": "https://parseport.github.io//security/policy/#vira-and-hacking",
+    "relUrl": "/security/policy/#vira-and-hacking"
+  },"22": {
+    "doc": "Security policy",
+    "title": "Data persistence",
+    "content": "There are two locations for data storage, depending on whether the data storage is for ParsePort’s internal infrastructure or for ParsePort’s customer-facing software (product). Both ParsePort’s internal and customer-facing IT systems are located at Global Connect in a professional ISAE 3402 approved as well as ISO 27001 and ISO 9001 certified data center on an IaaS platform. At Global Connect data is both physically and virtually secured against unauthorized access. Internally infrastructure . To ensure centralization of data, as well as managing access control, everything runs in Office365, and audit trail is enabled. OneDrive is the only place that stores internal data. Furthermore, MFA is enabled for all services, used within ParsePorts domain. The XBRL service, is the manuel XBRL convertion, is performed on a Microsoft Remote Desktop solution, to ensure a minimal attack surface. As the XBRL service is the only process, where employees handles customer data. Customer-facing infrastructure . The customer-facing infrastructure is used exclusively for data processing and conversion. A user is granted access with username and password, then the user uploads a file, that is being processed by the system. When the processing is complete, the user can retrieve the processed data. Afterwards both the uploaded and processed data are deleted. ",
+    "url": "https://parseport.github.io//security/policy/#data-persistence",
+    "relUrl": "/security/policy/#data-persistence"
+  },"23": {
+    "doc": "Security policy",
+    "title": "Updates of systemes",
+    "content": "All IT systems must be regularly updated. | At least once a month, critical software updates (Operating system, etc.) | Critical updates of hardware components (firmware, etc.) must be made at least every six months. | An internal vulnerability scan must be conducted at least annually to clarify internal risks. | . The IT manager is responsible for keeping abreast of vulnerabilities and their potential risks, if they are relevant to ParsePort’s infrastructure. ",
+    "url": "https://parseport.github.io//security/policy/#updates-of-systemes",
+    "relUrl": "/security/policy/#updates-of-systemes"
+  },"24": {
+    "doc": "Security policy",
+    "title": "Licenses",
+    "content": "All software used in ParsePort must have a valid license attached. All software purchases / registrations must either be made by or registered with the IT manager who then stands for documentation and asset management. ",
+    "url": "https://parseport.github.io//security/policy/#licenses",
+    "relUrl": "/security/policy/#licenses"
+  },"25": {
+    "doc": "Security policy",
+    "title": "Physical security",
+    "content": "The foundation for securing IT equipment is good physical IT security. ",
+    "url": "https://parseport.github.io//security/policy/#physical-security",
+    "relUrl": "/security/policy/#physical-security"
+  },"26": {
+    "doc": "Security policy",
+    "title": "Physical security - data center",
+    "content": "At ParsePort, all servers are outsourced to Global Connect. In order to achieve proper physical security, Global Connect has the following physical measures: . | Air conditioning to protect against overheating and inappropriate humidity | 24/7 access control with multiple lock types | Alarm | Fire resistant materials | Automatic fire fighting system | Servers that are lifted from the floor for protection against liquid liquids | Power redundancy in the form of UPS plant and diesel generator | Video surveillance | Perimeter protection in the form of confined areas | . ",
+    "url": "https://parseport.github.io//security/policy/#physical-security---data-center",
+    "relUrl": "/security/policy/#physical-security---data-center"
+  },"27": {
+    "doc": "Security policy",
+    "title": "Physical security - HQ",
+    "content": "At ParsePort’s head office, located at Roholmsvej 12 A, 2, 2620 Albertslund has the following physical measures: . | Key lock for entry. (shared with other tenants) | Key lock for door, key protected | Alarm connected to alarm center with personal code for each employee | Video surveillance connected to alarm center | Smoke cannon | . ",
+    "url": "https://parseport.github.io//security/policy/#physical-security---hq",
+    "relUrl": "/security/policy/#physical-security---hq"
+  },"28": {
+    "doc": "Security policy",
+    "title": "Cables",
+    "content": "Cables used at ParsePort’s address for IT equipment in the form of, for example, power cord, network cable, HDMI cables, etc. must be labeled so that they can be identified. Similarly, when using cross-fields at the address, it should be possible to identify the endpoints by marking. ",
+    "url": "https://parseport.github.io//security/policy/#cables",
+    "relUrl": "/security/policy/#cables"
+  },"29": {
+    "doc": "Security policy",
+    "title": "Wireless network",
+    "content": "Wireless networks are about WiFi communication that is done to gain access to a network of resources from one or more devices. All setup / modification / dismantling of wireless networks must be such that they are protected against intrusions by unauthorized persons. Wireless networks must at least comply with the following requirements: . | Encryption minimum according to WPA2 standard | Password must be used for setup and immediately changed from original | SSID needs to be changed from factory default | . ",
+    "url": "https://parseport.github.io//security/policy/#wireless-network",
+    "relUrl": "/security/policy/#wireless-network"
+  },"30": {
+    "doc": "Security policy",
+    "title": "Data backup",
+    "content": "The backup is taken by Global Connect and must comply with the following requirements: . | Backup daily | The backup must be “application aware” - be able to backup data stored in applications where full disk backup cannot generate valid backup. If this is not possible, the application must make a data dump locally daily, so that the normal file backup takes care of this. | Backup data must at all times be physically secured in the same way as the backup data | Backup data must be physically located in a data center other than the backup source and at least 1 kilometer apart | . ",
+    "url": "https://parseport.github.io//security/policy/#data-backup",
+    "relUrl": "/security/policy/#data-backup"
+  },"31": {
+    "doc": "Security policy",
+    "title": "Data / media disposal",
+    "content": "The IT manager is responsible for the disposal of all internal IT equipment, including the protection against data loss. All storage media must be taken out of IT equipment and sent for professional destruction by a provider offering professional data destruction. In case the storage media cannot be removed from the IT equipment, the entire IT equipment must be submitted for destruction. If IT equipment is to be reused outside ParsePort, this must be sanitized for data using a method that at least complies with NIST Special Publication 800-88 Revision 1 - Purge. ",
+    "url": "https://parseport.github.io//security/policy/#data--media-disposal",
+    "relUrl": "/security/policy/#data--media-disposal"
+  },"32": {
+    "doc": "Security policy",
+    "title": "Labeling and delivery of equipment",
+    "content": "The IT manager is responsible for the registration, labeling and delivery of IT equipment. As well as for registration in ParsePort’s IT asset management documentation. ",
+    "url": "https://parseport.github.io//security/policy/#labeling-and-delivery-of-equipment",
+    "relUrl": "/security/policy/#labeling-and-delivery-of-equipment"
+  },"33": {
+    "doc": "Security policy",
+    "title": "Miscellaneous",
+    "content": "All employees must always be aware of IT security in such a way that data is best protected and handled. Employees in ParsePort must also be aware of any inconsistencies or actual breaches of the IT security policy. If you become aware of this, this must either be addressed directly to the individual colleague, communicated to the immediate superior or to the IT manager, depending on the nature of the case. ",
+    "url": "https://parseport.github.io//security/policy/#miscellaneous",
+    "relUrl": "/security/policy/#miscellaneous"
+  },"34": {
+    "doc": "Security policy",
+    "title": "E-mail og doument handling",
+    "content": "Email is today one of the most widely used communication tools, both internally and externally. The handling of electronic mail and documents, henceforth referred to as e-mail, is therefore a central element in the daily work of ParsePort. All employees will also have to deal with e-mail, and must therefore also be able to observe and comply with the security requirements associated with it. With the introduction of electronic document management and digital signature, the legal effects of electronic documents have in many cases gradually been compared with ordinary hand-signed paper documents. Therefore, a set of common guidelines is needed for how e-mail should be received and answered. ",
+    "url": "https://parseport.github.io//security/policy/#e-mail-og-doument-handling",
+    "relUrl": "/security/policy/#e-mail-og-doument-handling"
+  },"35": {
+    "doc": "Security policy",
+    "title": "Definition of an e-mail",
+    "content": "In this context, e-mail means: Any transmitted / sent document or message in electronic form from or to one of ParsePort’s domains. However, there is a distinction between internal and external e-mails, where internal e-mails are sent only over closed circuits where all communication with the mail server is encrypted, but external e-mails can be transported without encryption. It goes without saying that the levels of security in handling them will vary depending on the nature and sensitivity of the document. For example, there is a difference between a regular meeting call and transfer of customer information. ",
+    "url": "https://parseport.github.io//security/policy/#definition-of-an-e-mail",
+    "relUrl": "/security/policy/#definition-of-an-e-mail"
+  },"36": {
+    "doc": "Security policy",
+    "title": "Legal validity of emails",
+    "content": "In Denmark, there are pending cases to determine whether e-mails are legally binding in the same way as ordinary letter exchange, as judgments have so far been dropped on both sides. Digitally signed emails are expected to be valid at least the same level as physical letters / contracts, as one can document the sender / signer. When no digital signature is used, and in any case of doubt as to the validity, legal effects or other regulatory framework, e-mail should not be used. However, for informal communication and regular correspondence, email remains one of the preferred tools. ",
+    "url": "https://parseport.github.io//security/policy/#legal-validity-of-emails",
+    "relUrl": "/security/policy/#legal-validity-of-emails"
+  },"37": {
+    "doc": "Security policy",
+    "title": "Handling incoming emails",
+    "content": "Any company or individual should be able to make electronic contact with ParsePort in the form of e-mail, and receive an electronic response. The processing of e-mail does not differ from the receipt of regular mail, and any valid inquiry should be answered promptly. If there is processing time or waiting time for the inquiry, the sender should receive a receipt for receiving the inquiry. In principle, ParsePort will not receive documents via email. If a customer wants to submit their accounting data, please refer to using parseport.com to upload their accounting data. ",
+    "url": "https://parseport.github.io//security/policy/#handling-incoming-emails",
+    "relUrl": "/security/policy/#handling-incoming-emails"
+  },"38": {
+    "doc": "Security policy",
+    "title": "Handling outgoing emails",
+    "content": "Any reply to an electronic mail must include a signature indicating ParsePort as the sender of the message. Email should contain information about expectation of recipient in case the message is sent to the wrong one. ",
+    "url": "https://parseport.github.io//security/policy/#handling-outgoing-emails",
+    "relUrl": "/security/policy/#handling-outgoing-emails"
+  },"39": {
+    "doc": "Security policy",
+    "title": "Mailboxes",
+    "content": "All official electronic correspondence to ParsePort is initially based on the main address info@parseport.com. In connection with scheduled absence (holidays, holidays, or the like) of more than one business day, each employee must ensure that senders of e-mails that send to a personal mailbox are either notified via the “not present” function in Outlook, or that the email is redirected to a colleague(s) or a shared mailbox. ",
+    "url": "https://parseport.github.io//security/policy/#mailboxes",
+    "relUrl": "/security/policy/#mailboxes"
+  },"40": {
+    "doc": "Security policy",
+    "title": "SPAM and Mail antivirus",
+    "content": "All emails to and from ParsePort are scanned by Fusemail for both spam and viruses. If messages contain one of these, they are quarantined at Fusemail for 90 days and then deleted. If Fusemail identifies a virus in a mail that can be safely removed, the secure part of the email (message) will be delivered. At the same time, the solution from Fusemail acts as a “backup” team for ParsePort’s mail systems in that Fusemail holds mail for up to 14 days if there are problems delivering the message to ParsePort’s Exchange server. ",
+    "url": "https://parseport.github.io//security/policy/#spam-and-mail-antivirus",
+    "relUrl": "/security/policy/#spam-and-mail-antivirus"
+  },"41": {
+    "doc": "Security policy",
+    "title": "Production system (customer-facing system)",
+    "content": "ParsePort’s primary business is the creation / generation of XBRL data. ",
+    "url": "https://parseport.github.io//security/policy/#production-system-customer-facing-system",
+    "relUrl": "/security/policy/#production-system-customer-facing-system"
+  },"42": {
+    "doc": "Security policy",
+    "title": "The system",
+    "content": "ParsePort allows customers to create XBRL files using three different interfaces. | Graphic interface website that presents a login interface where the customer logs in to a TLS 1.2 secured page using a username and password. The customer can then upload a data file, after which ParsePort’s system converts / processes it, and the customer can then download the XBRL data file. | Excel Add-in set up with customer’s username / password. Using Add-in, the data file is transferred via TLS 1.2 to ParsePort’s systems, after which the system converts / processes it and returns an XBRL file with data. | API interface, for use by customers’ own programs / software. So that the customer can embed the logic of ParsePort into their own applications or API supporting software. The API interface is used by the customer’s solution calling ParsePorts API via TLS 1.2 with a key, as well as data for conversion / processing. ParsePort’s system then returns the XBRL file of data. | . ",
+    "url": "https://parseport.github.io//security/policy/#the-system",
+    "relUrl": "/security/policy/#the-system"
+  },"43": {
+    "doc": "Security policy",
+    "title": "System Availability",
+    "content": "The system is accessible from all over the Internet and is protected according to the two sections “Technical safety” and “Physical security”. ",
+    "url": "https://parseport.github.io//security/policy/#system-availability",
+    "relUrl": "/security/policy/#system-availability"
+  },"44": {
+    "doc": "Security policy",
+    "title": "Data security",
+    "content": "All communication with the production system must be encrypted during transport over the internet minimum according to the TLS 1.2 standard (RFC 5246). All data stored in the production system must be segmented in a way that it is not possible for customers on the platform to access each other’s data. ",
+    "url": "https://parseport.github.io//security/policy/#data-security",
+    "relUrl": "/security/policy/#data-security"
+  },"45": {
+    "doc": "Standard level agreements",
+    "title": "Standard SLA",
+    "content": "The Supplier’s standard service targets for availability of infrastructure (all timestamps are GMT+1): . | SLA (service target) |   | . | Guaranteed availability in the operation’s business hours | 99.6 % | . | Operation’s business hours | Mon-Thursday 8:30-16:30, Friday 8:30-16:00 | . | Platform monitoring | 24/7 | . The above shall be calculated according to availability of server infrastructure. ",
+    "url": "https://parseport.github.io//architecture/sla#standard-sla",
+    "relUrl": "/architecture/sla#standard-sla"
+  },"46": {
+    "doc": "Standard level agreements",
+    "title": "Service targets for availability of server instances (standard service targets)",
+    "content": "ParsePort’s standard responsibility for availability (operational responsibility) shall include matters up to and including the application described in the Agreement. Thus, the guaranteed availability on server instances shall be calculated at application level. Availability at application level shall be measured as follows: . On an external cloud server, an agent is installed which at fixed intervals connects to and reports status on selected services to operations personnel. The agent reports on services which run on individual server instances. If the server, or just one of the services which are being monitored, becomes unavailable and thus does not send a message to the agent, an alarm will immediately be activated to make the operations personnel react. As the server itself reports status through the agent, an alarm will also be activated if the network connection in ParsePort’s data centres is not available (and the server is thus not available). Availability (uptime percentage) - per server instance – is calculated as follows: . Available Operating Time (Measurement Period -Planned Downtime -Downtime)/Agreed Operating Time (Measurement Period -Planned Downtime))*100 % = Uptime per server instance . The calculation does not include effects from data communication lines measured from ParsePort’s edge router to the Customer, the Customer’s network or units owned by the Customer. Total Availability (uptime percentage). The total Availability (uptime percentage) shall determine compliance with, ”Guaranteed availability at application level in the operations business hours”. This shall be calculated as below: . The sum of uptime per server instance for all server instances/Number of server instances = Total availability /Uptime percentage . The availability (the uptime percentage) shall be calculated as an average of Availability/Uptimes for all server instances. The following conditions shall not be viewed as downtime: . | Downtime solely caused by the Customer’s circumstances, including errors in the Customer’s software or data transmission lines. | Downtime due to errors solely caused by a third-party supplier not having published an error in Software used by ParsePort. ParsePort shall document to the Customer that the error had not been published. | Downtime because of errors where the Customer has chosen to postpone the error correction. | Downtime caused by other circumstances for which ParsePort is not responsible. | Downtime caused by software and hardware components owned/licensed/leased/rented by the Customer for which no maintenance agreements with ParsePort have been made. | . Additional operational responsibility – other than the above – shall be agreed separately. Service targets for infrastructure, in addition to standard operational responsibility, will be specified in the next section. Service targets, in addition to standard service targets . No other service targets for infrastructure except the above standard service targets have been agreed cf. previous section. ",
+    "url": "https://parseport.github.io//architecture/sla#service-targets-for-availability-of-server-instances-standard-service-targets",
+    "relUrl": "/architecture/sla#service-targets-for-availability-of-server-instances-standard-service-targets"
+  },"47": {
+    "doc": "Standard level agreements",
+    "title": "Service targets for Operations support and Service Desk",
+    "content": "The Supplier’s Service Desk and operations support services shall be supplied with the service targets which appear from the following section. Incidents – prioritisation and response times . Incidents requiring support shall be divided into priority levels by ParsePort. When reporting an incident, the Customer may request a priority level, but ParsePort shall make the final assessment and determine the priority. Prioritisation shall be determined based on impact (how many users or the type of users) and urgency. | Priority | Description | Response time | . | Priority 1 | A system-critical incident which causes complete system failure or unavailability of the Customer’s System. | If reporting is made in the period Monday-Thursday, 8:30-16:30 and Friday 8:30-16:00, problem solving is initiated within 60 minutes. If reporting is made outside the abovementioned period, problem solving is initiated within 120 minutes. | . | Priority 2 | Incidents which have significant impact on the System’s functionality, reduce parts of the System’s functionality or cause significantly reduced performance. In addition, incidents which cause risk of system failure. | If reporting is made in the period Monday-Thursday, 8:30-16:30 and Friday 8:30-16:00, problem solving is initiated within 120 minutes.* If reporting is made outside the abovementioned period, problem solving is initiated within 240 minutes.* | . | Priority 3 | Support-requiring incidents which comprise non-critical corrections to the System, like e.g. clean-up, moving data, cosmetic modifications and similar. Moreover, incidents in which the system is accessible for the users at the Customer, but where there are inconveniences or obstacles which prevent an error-free operation, or there is a risk that an incident will escalate to priority 2 if no measures are taken. | If reporting is made in the period Monday-Thursday, 8:30-16:30 and Friday 8:30-16:00, problem solving is initiated within 24 hours.* | . | Calculated within Service Desk business hours. | . ",
+    "url": "https://parseport.github.io//architecture/sla#service-targets-for-operations-support-and-service-desk",
+    "relUrl": "/architecture/sla#service-targets-for-operations-support-and-service-desk"
+  },"48": {
+    "doc": "Standard level agreements",
+    "title": "Standard level agreements",
+    "content": " ",
+    "url": "https://parseport.github.io//architecture/sla",
+    "relUrl": "/architecture/sla"
+  },"49": {
+    "doc": "Technical security",
+    "title": "Technical security",
+    "content": "Development at ParsePort follows the Secure Software Development Life Cycle S-SDLC. In the CI/CD pipeline, ParsePort makes use of static code analysis, the following are used: . | SonarQube to scan our code for security vulnabilities, to ensure best pratises are followed. Furthermore, SonarQube is used to keep the maintainability high, which enable fast mitigations if any vulnability is found. | Dependabot used to scan our dependencies and 3rd party libraries. | PenTest On a yearly basis a penetration test is preformed against the ParsePort environments. The result of the test, is used to update requirements cf. S-SDLC | . ",
+    "url": "https://parseport.github.io//security/technicalsecurity/",
+    "relUrl": "/security/technicalsecurity/"
+  },"50": {
+    "doc": "Technical security",
+    "title": "Identity provider",
+    "content": "The ParsePort solution has its own identity server, which are built upon identityserver.io. As a partner you will get clientId and clientSecret generated in the ParsePort backend, to use for authentication towards the ParsePort API. The standard way for communication is then witht he use of JWT tokens. Protocol(s) . At the current point in time, the standard authentication is via SAML, which can seem old school, but in this way the full control of access is held in the ParsePort solution. If there is a request for integration via SAML2.0, then take contact and it will be configured for you. ",
+    "url": "https://parseport.github.io//security/technicalsecurity/#identity-provider",
+    "relUrl": "/security/technicalsecurity/#identity-provider"
+  },"51": {
+    "doc": "Technical security",
+    "title": "Transport Layer Security",
+    "content": "The transport layer security at https://xbrlapi.parseport.com grades A+, based on SSLlabs from Qualys. On a querterly basis the certificates are reviewed to ensure the grade can be held at A+. All parseport.com domains are behind a DNSSEC, which protects against attackers whom could intercept DNS queries. Protocol(s) . At the moment, it is only TLS 1.2, which are accepted. Using TLS 1.3 will be considered for the next review of SSL for the production environment. ",
+    "url": "https://parseport.github.io//security/technicalsecurity/#transport-layer-security",
+    "relUrl": "/security/technicalsecurity/#transport-layer-security"
+  }
+}
